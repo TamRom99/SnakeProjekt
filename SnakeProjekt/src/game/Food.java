@@ -11,6 +11,12 @@ public class Food {
 		this.setFoodX((int) (Screen.xoff+ Math.random() * 25));
 		this.setFoodY((int) (Screen.yoff + Math.random() * 20));
 	}
+	
+	public void resetFood() {
+		this.setFoodX((int) (Screen.xoff+ Math.random() * 25));
+		this.setFoodY((int) (Screen.yoff + Math.random() * 20));
+	}
+
 
 	public int getFoodX() {
 		return FoodX;
