@@ -5,7 +5,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Board extends JLabel {
-
+	private static int NumberOfBoxesX = 35;
+	private static int NumberOfBoxesY = 25;
+	private static int BoxWidth = 25;
+	private static int BoxHeight = 25;
 	Point p;
 
 	@Override
@@ -18,42 +21,41 @@ public class Board extends JLabel {
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, 0, Screen.width, Screen.height);
 
-		// Draw caption
-		/*
-		 * g.setColor(new Color(0, 0, 128)); g.fillRect(0, 0, 1000, 52); g.setFont(new
-		 * Font("Cambria Math", Font.BOLD, 30)); g.setColor(new Color(127, 255, 0));
-		 * g.drawString("Snake", 450, 35);
-		 */
 
 		// Draw Grid
 		g.setColor(Color.LIGHT_GRAY);
-		g.fillRect(90, 70, 800, 640);
-		for (int i = 0; i < 25; i++) {
-			for (int k = 0; k < 20; k++) {
-				g.drawRect(i * 32 + Screen.xoff, k * 32 + Screen.yoff, 32, 32);
-
-			}
+		for (int i = 0; i < NumberOfBoxesX; i++) {
+			for (int k = 0; k < NumberOfBoxesY; k++) {
+				g.drawRect(i * 25 + Screen.xoff, k * 25 + Screen.yoff, BoxWidth, BoxHeight);	}
 		}
 		// Draw Border
 		g.setColor(Color.black);
-		g.drawRect(Screen.xoff, Screen.yoff, 800, 640);
+		g.drawRect(Screen.xoff, Screen.yoff, BoxWidth*NumberOfBoxesX , BoxHeight* NumberOfBoxesY);
 
 		//Draw Tails
 		g.setColor(new Color(127, 255, 0));
 		for (int i = 0; i < Snake.tails.size(); i++) {
 			p = Snake.coordinates(Snake.tails.get(i).getTailX(), Snake.tails.get(i).getTailY());
-			g.fillRect(p.x, p.y, 32, 32);
+			g.fillRect(p.x, p.y, BoxWidth, BoxHeight);
 		}
 
 		//Draw Head
 		g.setColor(Color.GREEN);
 		p = Snake.coordinates(Snake.head.getHeadX(), Snake.head.getHeadY());
-		g.fillRect(p.x, p.y, 32, 32);
+		g.fillRect(p.x, p.y, BoxWidth, BoxHeight);
 
 		//Draw Food
 		g.setColor(Color.ORANGE);
 		p = Snake.coordinates(Snake.food.getFoodX(), Snake.food.getFoodY());
-		g.fillRect(p.x, p.y, 32, 32);
+		g.fillRect(p.x, p.y, BoxWidth, BoxHeight);
+		
+		//Draw Score
+		g.setColor(new Color(127, 255, 0));
+		g.fillOval(300,725 , 400, 50);
+		g.setColor(new Color(0, 0, 128));
+		g.setFont(new Font("Arial", Font.BOLD, 20));
+		g.drawString("Score:", 450, 760);
+		
 
 		repaint();
 	}

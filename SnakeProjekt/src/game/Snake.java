@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Snake {
 	public static boolean waitToMove = false;
-	public static Head head = new Head(7, 7);
+	public static Head head = new Head(17, 12);
 	public static ArrayList<Tail> tails = new ArrayList<>();
 
 	public static Food food = new Food();
@@ -59,8 +59,8 @@ public class Snake {
 
 	public static Point coordinates(int x, int y) {
 		Point p = new Point(0, 0);
-		p.x = x * 32 + Screen.xoff;
-		p.y = y * 32 + Screen.yoff;
+		p.x = x * 25 + Screen.xoff;
+		p.y = y * 25 + Screen.yoff;
 
 		return p;
 	}
