@@ -6,6 +6,8 @@ import java.awt.Font;
 
 import javax.swing.*;
 
+import action.KeyHandler;
+
 
 public class Screen {
 	JFrame frame;
@@ -25,6 +27,7 @@ public class Screen {
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(Color.DARK_GRAY); 
 		frame.setResizable(true);
+		frame.addKeyListener(new KeyHandler());
 		
 		//frame.addKeyListener(new KeyHandler());
 		JLabel captionLabel = new JLabel("Snake");
