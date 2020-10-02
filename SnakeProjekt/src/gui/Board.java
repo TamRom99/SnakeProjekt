@@ -17,10 +17,6 @@ public class Board extends JLabel {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
 
-		// Draw background
-		g.setColor(Color.DARK_GRAY);
-		g.fillRect(0, 0, Screen.width, Screen.height);
-
 
 		// Draw Grid
 		g.setColor(Color.LIGHT_GRAY);

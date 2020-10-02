@@ -8,7 +8,6 @@ public class Snake {
 	public static boolean waitToMove = false;
 	public static Head head = new Head(17, 12);
 	public static ArrayList<Tail> tails = new ArrayList<>();
-
 	public static Food food = new Food();
 
 	public static void addTail() {

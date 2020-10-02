@@ -10,10 +10,12 @@ import javax.swing.*;
 public class Screen {
 	JFrame frame;
 	
-	public static int height = 850;
-	public static int width = 1000;
+	static int height = 850;
+	static int width = 1000;
 	public static int xoff = 55;
 	public static int yoff= 70; 
+	private GameState gamestate = GameState.MENU;
+	
 	
 	public void createFrame() {
 		frame = new JFrame ("The snake");
@@ -21,6 +23,7 @@ public class Screen {
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
+		frame.getContentPane().setBackground(Color.DARK_GRAY); 
 		frame.setResizable(true);
 		
 		//frame.addKeyListener(new KeyHandler());
@@ -33,13 +36,16 @@ public class Screen {
 		captionLabel.setOpaque(true);
 		frame.getContentPane().add(captionLabel);
 		
-		
-		
+		MainMenu menu = new MainMenu();
 		Board board = new Board();
+		if(gamestate == GameState.MENU) {		
+		menu.createMenu();	
+		}else if(gamestate == GameState.GAME) {		
 		board.setBounds(0, 0, width, height);
 		board.setVisible(true);
+			}
 		
-				
+		
 		frame.add(board);		
 		frame.requestFocus();
 		frame.setVisible(true);		
