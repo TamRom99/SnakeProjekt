@@ -29,4 +29,10 @@ public class Food {
 		FoodY = foodY;
 	}
 
+
+	public void reset() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
