@@ -19,7 +19,7 @@ public class Snake {
 		}
 	}
 
-	void move() {
+	public static void move() {
 		if (tails.size() >= 2) {
 			for (int i = tails.size() - 1; i >= 1; i--) {
 				if (tails.get(i).isWait()) {
