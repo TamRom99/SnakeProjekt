@@ -9,10 +9,17 @@ public class Snake {
 	public static Head head = new Head(17, 12);
 	public static ArrayList<Tail> tails = new ArrayList<>();
 	public static Food food = new Food();
-
+		
+	
 	public static void addTail() {
+		
 		if (tails.size() < 1) {
 			tails.add(new Tail(head.getHeadX(), head.getHeadY()));
+			tails.add(new Tail(18,12));
+			tails.add(new Tail(19,12));
+			tails.add(new Tail(20,12));
+			tails.add(new Tail(21,12));
+			
 		} else {
 			tails.add(new Tail(tails.get(tails.size() - 1).TailX, tails.get(tails.size() - 1).TailY));
 		}

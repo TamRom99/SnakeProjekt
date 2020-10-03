@@ -41,14 +41,19 @@ public class Screen {
 		
 		MainMenu menu = new MainMenu();
 		Board board = new Board();
+		menu.setBounds(0, 0, width, height);
+		menu.setVisible(true);
+		
+		
 		if(gamestate == GameState.MENU) {		
-		menu.createMenu();	
+	
+		
 		}else if(gamestate == GameState.GAME) {		
 		board.setBounds(0, 0, width, height);
 		board.setVisible(true);
 			}
 		
-		
+		frame.add(menu);
 		frame.add(board);		
 		frame.requestFocus();
 		frame.setVisible(true);		
