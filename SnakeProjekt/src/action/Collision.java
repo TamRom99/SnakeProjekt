@@ -6,10 +6,11 @@ public class Collision {
 
 	public static boolean collideItself() {
 		for(int i=0; i<Snake.tails.size();i++) {
-			if(Snake.head.getHeadX() == Snake.tails.get(i).getTailX() && Snake.head.getHeadY() == Snake.tails.get(i).getTailY()) {
+			if(Snake.head.getHeadX() == Snake.tails.get(i).getTailX() && Snake.head.getHeadY() == Snake.tails.get(i).getTailY() 
+					&& Snake.tails.get(i).isWait()){
 			return true;
 			}
-	return false;
+	
 	}
 		return false;
 		
@@ -18,7 +19,7 @@ public class Collision {
 	
 	public static boolean collideBorder() {
 		
-		return (Snake.head.getHeadX()<0 ||Snake.head.getHeadX()>35 || Snake.head.getHeadY()<0 || Snake.head.getHeadY()>25);
+		return (Snake.head.getHeadX()<0 ||Snake.head.getHeadX()>34 || Snake.head.getHeadY()<0 || Snake.head.getHeadY()>24);
 		
 	}
 	
