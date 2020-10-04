@@ -5,8 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Board extends JLabel {
-	private static int NumberOfBoxesX = 35;
-	private static int NumberOfBoxesY = 25;
+	public static int NumberOfBoxesX = 35;
+	public static int NumberOfBoxesY = 25;
 	private static int BoxWidth = 25;
 	private static int BoxHeight = 25;
 	Point p;
@@ -32,17 +32,17 @@ public class Board extends JLabel {
 		g.setColor(Color.black);
 		g.drawRect(Screen.xoff, Screen.yoff, BoxWidth*NumberOfBoxesX , BoxHeight* NumberOfBoxesY);
 
+		//Draw Head
+				g.setColor(Color.GREEN);
+				p = Snake.coordinates(Snake.head.getHeadX(), Snake.head.getHeadY());
+				g.fillRect(p.x, p.y, BoxWidth, BoxHeight);
+				
 		//Draw Tails
 		g.setColor(new Color(127, 255, 0));
 		for (int i = 0; i < Snake.tails.size(); i++) {
 			p = Snake.coordinates(Snake.tails.get(i).getTailX(), Snake.tails.get(i).getTailY());
 			g.fillRect(p.x, p.y, BoxWidth, BoxHeight);
 		}
-
-		//Draw Head
-		g.setColor(Color.GREEN);
-		p = Snake.coordinates(Snake.head.getHeadX(), Snake.head.getHeadY());
-		g.fillRect(p.x, p.y, BoxWidth, BoxHeight);
 
 		//Draw Food
 		g.setColor(Color.ORANGE);

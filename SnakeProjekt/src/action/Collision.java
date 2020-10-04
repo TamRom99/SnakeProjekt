@@ -7,7 +7,7 @@ public class Collision {
 	public static boolean collideItself() {
 		for(int i=0; i<Snake.tails.size();i++) {
 			if(Snake.head.getHeadX() == Snake.tails.get(i).getTailX() && Snake.head.getHeadY() == Snake.tails.get(i).getTailY() 
-					&& Snake.tails.get(i).isWait()){
+					&& !Snake.tails.get(i).isWait()){
 			return true;
 			}
 	
@@ -25,9 +25,8 @@ public class Collision {
 	
 	public static void collideFood() {
 		if(Snake.head.getHeadX()==Snake.food.getFoodX() && Snake.head.getHeadY()==Snake.food.getFoodY()){
-			Snake.food.reset();
 			Snake.addTail();
-			
+			Snake.food.placeFood();
 			
 		}
 	}

@@ -1,6 +1,7 @@
 package game;
 
-import gui.Screen;
+import java.util.concurrent.ThreadLocalRandom;
+import gui.Board;
 
 public class Food {
 
@@ -8,8 +9,8 @@ public class Food {
 	int FoodY;
 
 	public void placeFood() {
-		this.setFoodX((int) (Screen.xoff+ Math.random() * 25));
-		this.setFoodY((int) (Screen.yoff + Math.random() * 20));
+		this.FoodX = ThreadLocalRandom.current() .nextInt(0,Board.NumberOfBoxesX);
+		this.FoodY = ThreadLocalRandom.current() .nextInt(0,Board.NumberOfBoxesY);
 	}
 	
 
@@ -28,11 +29,4 @@ public class Food {
 	public void setFoodY(int foodY) {
 		FoodY = foodY;
 	}
-
-
-	public void reset() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
