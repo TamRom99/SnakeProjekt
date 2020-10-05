@@ -2,6 +2,6 @@ package gui;
 
 public enum GameState {
 	
-	MENU, GAME
+	MENU, GAME, PAUSE 
 
 }
