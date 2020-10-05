@@ -26,7 +26,7 @@ public class Collision {
 	}
 
 	public static boolean collideBorder() {
-		return (Snake.head.getHeadX() < 0 || Snake.head.getHeadX() > Board.NumberOfBoxesX || Snake.head.getHeadY() < 0
-				|| Snake.head.getHeadY() > Board.NumberOfBoxesY);
+		return (Snake.head.getHeadX() < 0 || Snake.head.getHeadX() > Board.NumberOfBoxesX -1|| Snake.head.getHeadY() < 0
+				|| Snake.head.getHeadY() > Board.NumberOfBoxesY -1);
 	}
 }
