@@ -2,6 +2,9 @@ package gui;
 
 import game.Snake;
 import javax.swing.*;
+
+import action.Collision;
+
 import java.awt.*;
 
 public class Board extends JLabel {
@@ -28,6 +31,11 @@ public class Board extends JLabel {
 		g.setColor(Color.black);
 		g.drawRect(Screen.xoff, Screen.yoff, BoxWidth * NumberOfBoxesX, BoxHeight * NumberOfBoxesY);
 
+		// Draw Head
+		g.setColor(Color.GREEN);
+		p = Snake.coordinates(Snake.head.getHeadX(), Snake.head.getHeadY());
+		g.fillRect(p.x, p.y, BoxWidth, BoxHeight);
+
 		// Draw Tails
 		g.setColor(new Color(127, 255, 0));
 		for (int i = 0; i < Snake.tails.size(); i++) {
@@ -35,12 +43,8 @@ public class Board extends JLabel {
 			g.fillRect(p.x, p.y, BoxWidth, BoxHeight);
 		}
 
-		// Draw Head
-		g.setColor(Color.GREEN);
-		p = Snake.coordinates(Snake.head.getHeadX(), Snake.head.getHeadY());
-		g.fillRect(p.x, p.y, BoxWidth, BoxHeight);
-
 		// Draw Food
+
 		g.setColor(Color.ORANGE);
 		p = Snake.coordinates(Snake.food.getFoodX(), Snake.food.getFoodY());
 		g.fillRect(p.x, p.y, BoxWidth, BoxHeight);
@@ -50,7 +54,9 @@ public class Board extends JLabel {
 		g.fillOval(300, 725, 400, 50);
 		g.setColor(new Color(0, 0, 128));
 		g.setFont(new Font("Arial", Font.BOLD, 20));
+
 		g.drawString("Score:", 450, 760);
+		g.drawString("Score: " + Collision.score, 450, 760);
 
 		repaint();
 	}
