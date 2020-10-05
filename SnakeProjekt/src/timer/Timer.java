@@ -4,15 +4,18 @@ import action.Collision;
 import game.Snake;
 
 public class Timer extends Thread {
+	public static int millisec = 200;
+	
 	public static boolean running = true;
 	
 	public void run() {
 		while (running) {
 			try {
-				sleep (200);
+				sleep (millisec);
 				Snake.move();
 				Snake.waitToMove = false;
 				Collision.collideFood();
+				
 				if(Collision.collideItself()) {
 					Snake.tails.clear();
 				}

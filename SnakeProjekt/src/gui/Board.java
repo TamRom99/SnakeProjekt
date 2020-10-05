@@ -2,6 +2,9 @@ package gui;
 
 import game.Snake;
 import javax.swing.*;
+
+import action.Collision;
+
 import java.awt.*;
 
 public class Board extends JLabel {
@@ -54,7 +57,7 @@ public class Board extends JLabel {
 		g.fillOval(300,725 , 400, 50);
 		g.setColor(new Color(0, 0, 128));
 		g.setFont(new Font("Arial", Font.BOLD, 20));
-		g.drawString("Score:", 450, 760);
+		g.drawString("Score: "+ Collision.score, 450, 760);
 		
 
 		repaint();
