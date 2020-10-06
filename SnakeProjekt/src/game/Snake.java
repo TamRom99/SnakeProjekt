@@ -8,9 +8,13 @@ import java.util.ArrayList;
 public class Snake {
 	public static boolean waitToMove = false;
 	public static Head head = new Head(Board.NumberOfBoxesX / 2, Board.NumberOfBoxesY / 2);
-	
+
+	public static int scores = 0;
+
+
 	public static ArrayList<Tail> tails = new ArrayList<>();
 	public static Food food = new Food();
+
 
 	public static void addTail() {
 		

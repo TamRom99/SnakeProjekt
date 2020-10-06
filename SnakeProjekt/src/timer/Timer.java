@@ -31,7 +31,7 @@ public class Timer extends Thread {
 				}
 				if(Collision.collideItself()) {
 					Snake.tails.clear();
-			}	
+					Collision.scores = 0;			}	
 	
 		}
 		
