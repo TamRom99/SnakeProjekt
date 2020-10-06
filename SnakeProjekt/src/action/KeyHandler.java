@@ -8,6 +8,7 @@ import game.Snake;
 import java.awt.event.KeyEvent;
 
 public class KeyHandler implements KeyListener {
+	
 
 	@Override
 	public void keyTyped(KeyEvent e) {
