@@ -8,26 +8,26 @@ import java.util.ArrayList;
 public class Snake {
 	public static boolean waitToMove = false;
 	public static Head head = new Head(Board.NumberOfBoxesX / 2, Board.NumberOfBoxesY / 2);
-
-	public static int scores = 0;
-
+	public static Tail tail1 = new Tail(Board.NumberOfBoxesX +1/ 2, Board.NumberOfBoxesY / 2);
+	public static Tail tail2 = new Tail(Board.NumberOfBoxesX +2/ 2, Board.NumberOfBoxesY / 2);
+	public static Tail tail3 = new Tail(Board.NumberOfBoxesX +3/ 2, Board.NumberOfBoxesY / 2);
+	public static Tail tail4 = new Tail(Board.NumberOfBoxesX +4/ 2, Board.NumberOfBoxesY / 2);
+	
 
 	public static ArrayList<Tail> tails = new ArrayList<>();
 	public static Food food = new Food();
 
+	
+	public static void SnakeInitialize() {
+		tails.add(tail1);
+		tails.add(tail2);
+		tails.add(tail3);
+		tails.add(tail4);
+	}
+	
 
 	public static void addTail() {
-		
-		if (tails.size() < 1) {
-			tails.add(new Tail(head.getHeadX(), head.getHeadY()));
-			tails.add(new Tail(18,12));
-			tails.add(new Tail(19,12));
-			tails.add(new Tail(20,12));
-			tails.add(new Tail(21,12));
-			
-		} else {
 			tails.add(new Tail(tails.get(tails.size() - 1).TailX, tails.get(tails.size() - 1).TailY));
-		}
 	}
 
 	public static void move() {
