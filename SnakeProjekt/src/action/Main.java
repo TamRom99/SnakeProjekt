@@ -1,5 +1,6 @@
 package action;
 
+import game.Snake;
 import gui.Screen;
 import timer.Timer;
 
@@ -9,6 +10,8 @@ public class Main {
 
 		Screen screen = new Screen();
 		Timer timer = new Timer();
+		
+		Snake.SnakeInitialize();
 		
 		screen.createFrame();
 		timer.start();

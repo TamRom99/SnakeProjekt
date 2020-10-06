@@ -20,6 +20,10 @@ public class Board extends JLabel {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
 
+		// Draw background
+				g.setColor(Color.DARK_GRAY);
+				g.fillRect(0,0, Screen.width,Screen.height);
+						
 		// Draw Grid
 		g.setColor(Color.LIGHT_GRAY);
 		for (int i = 0; i < NumberOfBoxesX; i++) {
@@ -55,8 +59,8 @@ public class Board extends JLabel {
 		g.setColor(new Color(0, 0, 128));
 		g.setFont(new Font("Arial", Font.BOLD, 20));
 
-		g.drawString("Score:", 450, 760);
-		g.drawString("Score: " + Collision.score, 450, 760);
+		
+		g.drawString("Score: " + Collision.scores, 470, 760);
 
 		repaint();
 	}
