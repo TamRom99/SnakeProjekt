@@ -42,7 +42,7 @@ public class GameOver extends JPanel {
 		GameOverCaption.setForeground(Color.ORANGE);
 		
 		
-		ScoreLabel= new JLabel("Your Score: " + Collision.score);
+		ScoreLabel= new JLabel("Your Score: " + Collision.scores);
 		ScoreLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
 		ScoreLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		ScoreLabel.setForeground(Color.ORANGE);
