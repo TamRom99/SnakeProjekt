@@ -24,7 +24,7 @@ public class MainMenu extends JPanel {
 	public MainMenu() {
 		add(createPicture());
 		add(createMainMenuPanel());
-		setSize(Screen.width, Screen.height - Screen.captionHight);
+		setSize(Screen.width, Screen.height - Screen.captionHeight);
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		setVisible(true);
@@ -34,7 +34,7 @@ public class MainMenu extends JPanel {
 	private JLabel createPicture() {
 		snakeIcon = new ImageIcon(getClass().getResource("SnakeIcon.png"));
 		picture = new JLabel(snakeIcon);
-		picture.setBounds(Screen.width / 3, Screen.captionHight + 50, Screen.width / 3, Screen.height / 3);
+		picture.setBounds(Screen.width / 3, Screen.captionHeight + 50, Screen.width / 3, Screen.height / 3);
 
 		return picture;
 	}

@@ -25,7 +25,7 @@ public class GameOver extends JPanel {
 
 	public GameOver() {
 		add(createGameOverPanel());
-		setBounds(Screen.xoff, Screen.captionHight+150, Screen.width -2*Screen.xoff, Screen.height/2 );
+		setBounds(Screen.xoff, Screen.captionHeight+150, Screen.width -2*Screen.xoff, Screen.height/2 );
 		setBackground(Color.BLACK);
 		setLayout(null);
 		setVisible(true);

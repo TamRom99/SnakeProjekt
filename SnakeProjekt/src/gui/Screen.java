@@ -11,7 +11,7 @@ public class Screen {
 	static JFrame frame;
 	static int height = 850;
 	static int width = 1000;
-	static int captionHight = height / 17;
+	static int captionHeight = height / 17;
 	public static int xoff = 55;
 	public static int yoff = 70;
 	public static GameState gamestate = GameState.MENU;
@@ -36,7 +36,7 @@ public class Screen {
 		captionLabel.setFont(new Font("Cambria Math", Font.BOLD, 30));
 		captionLabel.setForeground(new Color(127, 255, 0));
 		captionLabel.setBackground(new Color(0, 0, 128));
-		captionLabel.setBounds(0, 0, width, captionHight);
+		captionLabel.setBounds(0, 0, width, captionHeight);
 		captionLabel.setOpaque(true);
 		frame.getContentPane().add(captionLabel);
 
