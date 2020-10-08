@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import action.KeyHandler;
 import timer.Timer;
 
 public class MainMenu extends JPanel {
@@ -32,7 +33,7 @@ public class MainMenu extends JPanel {
 	private JLabel createPicture() {
 		snakeIcon = new ImageIcon(getClass().getResource("SnakeIcon.png"));
 		picture = new JLabel(snakeIcon);
-		picture.setBounds(Screen.width / 3, Screen.captionHight+50, Screen.width / 3, Screen.height / 3);
+		picture.setBounds(Screen.width / 3, Screen.captionHight + 50, Screen.width / 3, Screen.height / 3);
 
 		return picture;
 	}
@@ -72,7 +73,6 @@ public class MainMenu extends JPanel {
 		FreeModeRb.setBackground(Color.DARK_GRAY);
 		bg.add(FreeModeRb);
 
-		
 		menuPanel.add(StartButton);
 		menuPanel.add(StandardModeRb);
 		menuPanel.add(FreeModeRb);

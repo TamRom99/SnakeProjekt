@@ -27,6 +27,7 @@ public class Screen {
 		frame.setResizable(true);
 
 		frame.addKeyListener(new KeyHandler());
+		
 		JLabel captionLabel = new JLabel("Snake");
 		captionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		captionLabel.setFont(new Font("Cambria Math", Font.BOLD, 30));
@@ -37,12 +38,10 @@ public class Screen {
 		frame.getContentPane().add(captionLabel);
 
 		frame.add(menu);
-
-		frame.addKeyListener(new KeyHandler());
-
+		
 		frame.setVisible(true);
 		System.out.println("Window made");
-
+		frame.addKeyListener(new KeyHandler());
 	}
 
 	public static void setGameState() {
@@ -62,6 +61,7 @@ public class Screen {
 			GameOver gameOver = new GameOver();
 			frame.requestFocus();
 			frame.add(gameOver);
+			gameOver.setVisible(true);
 
 		}
 	}

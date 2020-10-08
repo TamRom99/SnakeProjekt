@@ -3,6 +3,8 @@ package timer;
 import action.Collision;
 import game.Snake;
 import gui.Board;
+import gui.GameState;
+import gui.Screen;
 
 public class Timer extends Thread {
 	public static int millisec = 200;
@@ -44,6 +46,8 @@ public class Timer extends Thread {
 					Snake.head.setHeadX(Board.NumberOfBoxesX/2);
 					Snake.head.setHeadY(Board.NumberOfBoxesY /2); 
 					Snake.SnakeInitialize();
+					Screen.gamestate = GameState.GAMEOVER;
+					Screen.setGameState();
 			}
 			}
 		
