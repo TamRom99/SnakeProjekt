@@ -6,6 +6,7 @@ import java.awt.Font;
 import javax.swing.*;
 
 import action.KeyHandler;
+import action.Main;
 
 public class Screen {
 	static JFrame frame;
@@ -63,6 +64,7 @@ public class Screen {
 			board.requestFocus();
 			frame.add(board);
 			board.setVisible(true);
+			
 			
 		
 		} else if (gamestate == GameState.PAUSE) {

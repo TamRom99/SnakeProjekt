@@ -31,13 +31,15 @@ public class Timer extends Thread {
 				}*/
 				if(Collision.collideItself()) {
 					Snake.tails.clear();
+					Snake.SnakeInitialize();
 					Collision.scores = 0;			}	
 	
 			
 			if(Collision.collideBorder()) {
 					Snake.tails.clear();
-					Snake.head.setHeadX(16);
-					Snake.head.setHeadY(12); 
+					Snake.head.setHeadX(Board.NumberOfBoxesX/2);
+					Snake.head.setHeadY(Board.NumberOfBoxesY /2); 
+					Snake.SnakeInitialize();
 			}
 			}
 		
