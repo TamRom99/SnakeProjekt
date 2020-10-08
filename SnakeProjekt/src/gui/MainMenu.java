@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import action.KeyHandler;
+import timer.Timer;
 
 public class MainMenu extends JPanel {
 
@@ -54,6 +55,8 @@ public class MainMenu extends JPanel {
 				System.out.println("Button is pressed");
 				Screen.setGameState();
 				Screen.menu.setVisible(false);
+				Timer timer = new Timer();
+				timer.start();
 				
 			}
 		});
