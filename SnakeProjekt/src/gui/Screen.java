@@ -8,7 +8,7 @@ import javax.swing.*;
 import action.KeyHandler;
 
 public class Screen {
-	JFrame frame;
+	static JFrame frame;
 	static int height = 850;
 	static int width = 1000;
 	static int captionHight = height / 17;
@@ -35,14 +35,29 @@ public class Screen {
 		captionLabel.setOpaque(true);
 		frame.getContentPane().add(captionLabel);
 
-		MainMenu menu = new MainMenu();
-		Board board = new Board();
-		PauseMenu pausemenu = new PauseMenu();
-		GameOver gameOver = new GameOver();
+		
+		
+		/*PauseMenu pausemenu = new PauseMenu();
+		GameOver gameOver = new GameOver();*/
 
 		frame.addKeyListener(new KeyHandler());
 
-		if (gamestate == GameState.GAME) {
+		do  {
+			MainMenu menu = new MainMenu();
+			menu.requestFocus();
+			frame.add(menu);
+		}
+			while (gamestate == GameState.GAME); {
+				System.out.println ("Gameeeee");
+				Board board = new Board();	
+				board.setBounds(0, 0, width, height);
+				board.requestFocus();
+				frame.add(board);
+				board.setVisible(true);
+				}	
+			
+		
+		/*if (gamestate == GameState.GAME) {
 			board.setBounds(0, 0, width, height);
 			board.requestFocus();
 			frame.add(board);
@@ -56,8 +71,8 @@ public class Screen {
 		} else if (gamestate == GameState.GAMEOVER) {
 			frame.requestFocus();
 			frame.add(gameOver);
-		}
-
+		}*/
+		
 		frame.setVisible(true);
 		System.out.println("Window made");
 
