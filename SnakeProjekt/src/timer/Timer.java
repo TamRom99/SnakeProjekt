@@ -6,9 +6,9 @@ import gui.Board;
 
 public class Timer extends Thread {
 	public static int millisec = 200;
-	
+
 	public static boolean running = true;
-	
+
 	public void run() {
 		while (running) {
 			try {
@@ -34,17 +34,24 @@ public class Timer extends Thread {
 					Collision.scores = 0;			}	
 	
 		}
-		
-			/*	if(Collision.collideBorder()) {
+		/*
+			
+			if(Collision.collideBorder()) {
 					Snake.tails.clear();
 					Snake.head.setHeadX(16);
-					Snake.head.setHeadY(12); */
-				
+					Snake.head.setHeadY(12); 
+			}
+			else  {
+						break;
+						}
+					}
 			
+			*/
+		
 			catch (InterruptedException e) {
 				e.printStackTrace();
 				break;
 			}
 		}
-	}
+}
 }

@@ -15,6 +15,7 @@ public class Screen {
 	public static int xoff = 55;
 	public static int yoff = 70;
 	public static GameState gamestate = GameState.MENU;
+	static MainMenu menu = new MainMenu();
 
 	public void createFrame() {
 		frame = new JFrame("The snake");
@@ -24,6 +25,7 @@ public class Screen {
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.setResizable(true);
+		
 
 		frame.addKeyListener(new KeyHandler());
 		JLabel captionLabel = new JLabel("Snake");
@@ -35,47 +37,44 @@ public class Screen {
 		captionLabel.setOpaque(true);
 		frame.getContentPane().add(captionLabel);
 
+			
 		
+
+		frame.add(menu);
 		
-		/*PauseMenu pausemenu = new PauseMenu();
-		GameOver gameOver = new GameOver();*/
+	
+		
 
 		frame.addKeyListener(new KeyHandler());
 
-		do  {
-			MainMenu menu = new MainMenu();
-			menu.requestFocus();
-			frame.add(menu);
-		}
-			while (gamestate == GameState.GAME); {
-				System.out.println ("Gameeeee");
-				Board board = new Board();	
-				board.setBounds(0, 0, width, height);
-				board.requestFocus();
-				frame.add(board);
-				board.setVisible(true);
-				}	
-			
 		
-		/*if (gamestate == GameState.GAME) {
-			board.setBounds(0, 0, width, height);
-			board.requestFocus();
-			frame.add(board);
-			board.setVisible(true);
-		} else if (gamestate == GameState.MENU) {
-			menu.requestFocus();
-			frame.add(menu);
-		} else if (gamestate == GameState.PAUSE) {
-			frame.requestFocus();
-			frame.add(pausemenu);
-		} else if (gamestate == GameState.GAMEOVER) {
-			frame.requestFocus();
-			frame.add(gameOver);
-		}*/
 		
+	
 		frame.setVisible(true);
 		System.out.println("Window made");
 
 	}
-
+	
+	public static void setGameState () {
+		if (gamestate == GameState.GAME) {
+		  	System.out.println ("Gameeeee");
+		  	Board board = new Board();	
+			board.setBounds(0, 0, width, height);
+			board.requestFocus();
+			frame.add(board);
+			board.setVisible(true);
+			
+		
+		} else if (gamestate == GameState.PAUSE) {
+			PauseMenu pausemenu = new PauseMenu();
+			frame.requestFocus();
+			frame.add(pausemenu);
+		} else if (gamestate == GameState.GAMEOVER) {
+			GameOver gameOver = new GameOver();
+			frame.requestFocus();
+			frame.add(gameOver);
+			
+		}
+	}
+	
 }

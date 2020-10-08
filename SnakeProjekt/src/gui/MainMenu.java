@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import action.KeyHandler;
+
 public class MainMenu extends JPanel {
 
 	private JPanel menuPanel;
@@ -50,6 +52,9 @@ public class MainMenu extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				Screen.gamestate = GameState.GAME;
 				System.out.println("Button is pressed");
+				Screen.setGameState();
+				Screen.menu.setVisible(false);
+				
 			}
 		});
 
