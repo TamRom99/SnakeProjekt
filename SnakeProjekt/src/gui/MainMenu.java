@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import action.KeyHandler;
+import game.Snake;
 import timer.Timer;
 
 public class MainMenu extends JPanel {
@@ -50,10 +51,11 @@ public class MainMenu extends JPanel {
 		StartButton.setBackground(new Color(0, 0, 128));
 		StartButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Screen.gamestate = GameState.GAME;
 				System.out.println("Button is pressed");
+				Screen.gamestate = GameState.GAME;
 				Screen.setGameState();
 				Screen.menu.setVisible(false);
+				Snake.SnakeInitialize();
 				Timer timer = new Timer();
 				timer.start();
 			}

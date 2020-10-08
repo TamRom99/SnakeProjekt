@@ -14,7 +14,6 @@ public class Collision {
 			Snake.food.placeFood();
 			score = score + 10;
 			Timer.millisec = Timer.millisec - 5;
-
 		}
 	}
 
@@ -32,7 +31,6 @@ public class Collision {
 	public static boolean collideBorder() {
 		return (Snake.head.getHeadX() < 0 || Snake.head.getHeadX() > Board.NumberOfBoxesX - 1
 				|| Snake.head.getHeadY() < 0 || Snake.head.getHeadY() > Board.NumberOfBoxesY - 1);
-		
 	}
 
 	// Free mode

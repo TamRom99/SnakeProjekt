@@ -8,22 +8,16 @@ import java.util.ArrayList;
 public class Snake {
 	public static boolean waitToMove = false;
 	public static Head head = new Head(Board.NumberOfBoxesX / 2, Board.NumberOfBoxesY / 2);
-	public static Tail tail1 = new Tail(head.getHeadX() +1, head.getHeadY());
-	public static Tail tail2 = new Tail(head.getHeadX() +2, head.getHeadY());
-	public static Tail tail3 = new Tail(head.getHeadX() +3, head.getHeadY());
-	public static Tail tail4 = new Tail(head.getHeadX() +4, head.getHeadY());
 	
-
 	public static ArrayList<Tail> tails = new ArrayList<>();
 	public static Food food = new Food();
 
 	
 	public static void SnakeInitialize() {
 		tails.add(new Tail(head.getHeadX(),head.getHeadY()));
-		tails.add(tail1);
-		tails.add(tail2);
-		tails.add(tail3);
-		tails.add(tail4);
+		tails.add(new Tail(head.getHeadX() +1, head.getHeadY()));
+		tails.add(new Tail(head.getHeadX() +2, head.getHeadY()));
+		tails.add(new Tail(head.getHeadX() +3, head.getHeadY()));
 	}
 	
 
@@ -71,8 +65,8 @@ public class Snake {
 
 	public static Point coordinates(int x, int y) {
 		Point p = new Point(0, 0);
-		p.x = x * 25 + Screen.xoff;
-		p.y = y * 25 + Screen.yoff;
+		p.x = x * Board.BoxWidth + Screen.xoff;
+		p.y = y * Board.BoxHeight + Screen.yoff;
 
 		return p;
 	}

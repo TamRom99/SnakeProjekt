@@ -44,16 +44,14 @@ public class Screen {
 
 		frame.setVisible(true);
 		System.out.println("Window made");
-		frame.addKeyListener(new KeyHandler());
 	}
 
 	public static void setGameState() {
 		if (gamestate == GameState.GAME) {
 			System.out.println("Game");
-			
-			board.setBounds(0, 0, width, height);
-			board.requestFocus();
 			frame.add(board);
+			board.setBounds(0, 0, width, height);
+			board.requestFocus();			
 			board.setVisible(true);
 		} else if (gamestate == GameState.PAUSE) {
 			System.out.println("Pause");
