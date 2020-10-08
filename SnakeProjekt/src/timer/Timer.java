@@ -17,6 +17,7 @@ public class Timer extends Thread {
 				Snake.waitToMove = false;
 				Collision.collideFood();
 		
+				// Free mode
 			/*	if(Collision.crossLeftBorder()) {
 					Snake.head.setHeadX(Board.NumberOfBoxesX -1);
 				}
@@ -29,12 +30,15 @@ public class Timer extends Thread {
 				if(Collision.crossDownBorder()) {
 					Snake.head.setHeadY(Board.NumberOfBoxesY -25);
 				}*/
+				
+				
+				//CollideItself use at Free and Standard mode
 				if(Collision.collideItself()) {
 					Snake.tails.clear();
 					Snake.SnakeInitialize();
 					Collision.scores = 0;			}	
 	
-			
+			//Standard mode
 			if(Collision.collideBorder()) {
 					Snake.tails.clear();
 					Snake.head.setHeadX(Board.NumberOfBoxesX/2);

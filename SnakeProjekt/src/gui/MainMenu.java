@@ -1,7 +1,6 @@
 package gui;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -9,7 +8,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import action.KeyHandler;
 import timer.Timer;
 
 public class MainMenu extends JPanel {
@@ -57,7 +55,6 @@ public class MainMenu extends JPanel {
 				Screen.menu.setVisible(false);
 				Timer timer = new Timer();
 				timer.start();
-				
 			}
 		});
 

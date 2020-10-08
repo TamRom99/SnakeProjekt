@@ -9,11 +9,10 @@ public class Food {
 	int FoodY;
 
 	public void placeFood() {
-		this.FoodX = ThreadLocalRandom.current() .nextInt(0,Board.NumberOfBoxesX);
-		this.FoodY = ThreadLocalRandom.current() .nextInt(0,Board.NumberOfBoxesY);
+		this.FoodX = ThreadLocalRandom.current().nextInt(0, Board.NumberOfBoxesX);
+		this.FoodY = ThreadLocalRandom.current().nextInt(0, Board.NumberOfBoxesY);
 	}
-	
-	
+
 	public int getFoodX() {
 		return FoodX;
 	}

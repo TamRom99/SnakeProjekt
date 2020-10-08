@@ -6,7 +6,6 @@ import java.awt.Font;
 import javax.swing.*;
 
 import action.KeyHandler;
-import action.Main;
 
 public class Screen {
 	static JFrame frame;
@@ -26,7 +25,6 @@ public class Screen {
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.setResizable(true);
-		
 
 		frame.addKeyListener(new KeyHandler());
 		JLabel captionLabel = new JLabel("Snake");
@@ -38,35 +36,24 @@ public class Screen {
 		captionLabel.setOpaque(true);
 		frame.getContentPane().add(captionLabel);
 
-			
-		
-
 		frame.add(menu);
-		
-	
-		
 
 		frame.addKeyListener(new KeyHandler());
 
-		
-		
-	
 		frame.setVisible(true);
 		System.out.println("Window made");
 
 	}
-	
-	public static void setGameState () {
+
+	public static void setGameState() {
 		if (gamestate == GameState.GAME) {
-		  	System.out.println ("Gameeeee");
-		  	Board board = new Board();	
+			System.out.println("Gameeeee");
+			Board board = new Board();
 			board.setBounds(0, 0, width, height);
 			board.requestFocus();
 			frame.add(board);
 			board.setVisible(true);
-			
-			
-		
+
 		} else if (gamestate == GameState.PAUSE) {
 			PauseMenu pausemenu = new PauseMenu();
 			frame.requestFocus();
@@ -75,8 +62,8 @@ public class Screen {
 			GameOver gameOver = new GameOver();
 			frame.requestFocus();
 			frame.add(gameOver);
-			
+
 		}
 	}
-	
+
 }

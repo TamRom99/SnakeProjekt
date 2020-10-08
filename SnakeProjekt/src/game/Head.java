@@ -1,12 +1,11 @@
 package game;
 
 public class Head {
-	
+
 	int HeadX;
-	int HeadY;	
+	int HeadY;
 	Direction direction = Direction.LEFT;
-	
-	
+
 	public Head(int headX, int headY) {
 		super();
 		HeadX = headX;
@@ -37,6 +36,4 @@ public class Head {
 		this.direction = direction;
 	}
 
-	
-	
 }
