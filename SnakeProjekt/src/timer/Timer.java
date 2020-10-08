@@ -2,7 +2,6 @@ package timer;
 
 import action.Collision;
 import game.Snake;
-import gui.Board;
 import gui.GameState;
 import gui.Screen;
 
@@ -14,47 +13,41 @@ public class Timer extends Thread {
 	public void run() {
 		while (running) {
 			try {
-				sleep (millisec);
+				sleep(millisec);
 				Snake.move();
 				Snake.waitToMove = false;
 				Collision.collideFood();
-		
+
 				// Free mode
-			/*	if(Collision.crossLeftBorder()) {
-					Snake.head.setHeadX(Board.NumberOfBoxesX -1);
-				}
-				if(Collision.crossRightBorder()) {
-					Snake.head.setHeadX(Board.NumberOfBoxesX -35);
-				}
-				if(Collision.crossUpperBorder()) {
-					Snake.head.setHeadY(Board.NumberOfBoxesY -1);
-				}
-				if(Collision.crossDownBorder()) {
-					Snake.head.setHeadY(Board.NumberOfBoxesY -25);
-				}*/
-				
-				
-				//CollideItself use at Free and Standard mode
-				if(Collision.collideItself()) {
-					Snake.tails.clear();
-					Snake.SnakeInitialize();
-					Collision.scores = 0;			}	
-	
-			//Standard mode
-			if(Collision.collideBorder()) {
-					Snake.tails.clear();
-					Snake.head.setHeadX(Board.NumberOfBoxesX/2);
-					Snake.head.setHeadY(Board.NumberOfBoxesY /2); 
-					Snake.SnakeInitialize();
+				/*
+				 * if(Collision.crossLeftBorder()) { Snake.head.setHeadX(Board.NumberOfBoxesX
+				 * -1); } if(Collision.crossRightBorder()) {
+				 * Snake.head.setHeadX(Board.NumberOfBoxesX -35); }
+				 * if(Collision.crossUpperBorder()) { Snake.head.setHeadY(Board.NumberOfBoxesY
+				 * -1); } if(Collision.crossDownBorder()) {
+				 * Snake.head.setHeadY(Board.NumberOfBoxesY -25); }
+				 */
+
+				// CollideItself use at Free and Standard mode
+				if (Collision.collideItself()) {
 					Screen.gamestate = GameState.GAMEOVER;
 					Screen.setGameState();
+					running = false;
+				}
+
+				// Standard mode - noch zusmmenfassen mit CollideItself
+				if (Collision.collideBorder()) {
+					Screen.gamestate = GameState.GAMEOVER;
+					Screen.setGameState();
+					running = false;
+					Snake.tails.clear();
+				}
 			}
-			}
-		
+
 			catch (InterruptedException e) {
 				e.printStackTrace();
 				break;
 			}
 		}
-}
+	}
 }

@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import action.Collision;
+import game.Snake;
+import timer.Timer;
 
 public class GameOver extends JPanel {
 	
@@ -42,21 +44,30 @@ public class GameOver extends JPanel {
 		GameOverCaption.setForeground(Color.ORANGE);
 		
 		
-		ScoreLabel= new JLabel("Your Score: " + Collision.scores);
+		ScoreLabel= new JLabel("Your Score: " + Collision.score);
 		ScoreLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
 		ScoreLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		ScoreLabel.setForeground(Color.ORANGE);
 		
 		
 		
-		RestartButton= new JButton("Continue");
+		RestartButton= new JButton("Restart");
 		RestartButton.setFont(new Font("Tahoma", Font.BOLD, 25));
 		RestartButton.setForeground(Color.WHITE);
 		RestartButton.setBackground(Color.ORANGE);
 		RestartButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {				
-				//Screen.gamestate = GameState.GAME;
-				System.out.println("Continue Game");
+				Screen.gamestate = GameState.GAME;
+				Screen.gameOver.setVisible(false);
+				Screen.board.setVisible(true);
+				Collision.score = 0;
+				Timer.running = true;
+				Timer.millisec = 200;
+				Snake.tails.clear();
+				Snake.head.setHeadX(Board.NumberOfBoxesX / 2);
+				Snake.head.setHeadY(Board.NumberOfBoxesY / 2);
+				Snake.SnakeInitialize();
+				System.out.println("Restart Game");
 			}
 		});
 		

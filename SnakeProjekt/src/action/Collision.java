@@ -2,19 +2,17 @@ package action;
 
 import game.Snake;
 import gui.Board;
-import gui.GameState;
-import gui.Screen;
 import timer.Timer;
 
 public class Collision {
 
-	public static int scores = 0;
+	public static int score = 0;
 
 	public static void collideFood() {
 		if (Snake.head.getHeadX() == Snake.food.getFoodX() && Snake.head.getHeadY() == Snake.food.getFoodY()) {
 			Snake.addTail();
 			Snake.food.placeFood();
-			scores = scores + 10;
+			score = score + 10;
 			Timer.millisec = Timer.millisec - 5;
 
 		}

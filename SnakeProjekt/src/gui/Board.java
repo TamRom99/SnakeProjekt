@@ -60,7 +60,7 @@ public class Board extends JLabel {
 		g.setFont(new Font("Arial", Font.BOLD, 20));
 
 		
-		g.drawString("Score: " + Collision.scores, 470, 760);
+		g.drawString("Score: " + Collision.score, 470, 760);
 
 		repaint();
 	}

@@ -15,8 +15,11 @@ public class Screen {
 	public static int xoff = 55;
 	public static int yoff = 70;
 	public static GameState gamestate = GameState.MENU;
-	static MainMenu menu = new MainMenu();
-
+	public static MainMenu menu = new MainMenu();
+	public static Board board = new Board();
+	public static PauseMenu pausemenu = new PauseMenu();
+	public static GameOver gameOver = new GameOver();
+	
 	public void createFrame() {
 		frame = new JFrame("The snake");
 		frame.setSize(width, height);
@@ -27,7 +30,7 @@ public class Screen {
 		frame.setResizable(true);
 
 		frame.addKeyListener(new KeyHandler());
-		
+
 		JLabel captionLabel = new JLabel("Snake");
 		captionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		captionLabel.setFont(new Font("Cambria Math", Font.BOLD, 30));
@@ -38,7 +41,7 @@ public class Screen {
 		frame.getContentPane().add(captionLabel);
 
 		frame.add(menu);
-		
+
 		frame.setVisible(true);
 		System.out.println("Window made");
 		frame.addKeyListener(new KeyHandler());
@@ -46,24 +49,25 @@ public class Screen {
 
 	public static void setGameState() {
 		if (gamestate == GameState.GAME) {
-			System.out.println("Gameeeee");
-			Board board = new Board();
+			System.out.println("Game");
+			
 			board.setBounds(0, 0, width, height);
 			board.requestFocus();
 			frame.add(board);
 			board.setVisible(true);
-
 		} else if (gamestate == GameState.PAUSE) {
-			PauseMenu pausemenu = new PauseMenu();
+			System.out.println("Pause");
 			frame.requestFocus();
 			frame.add(pausemenu);
 		} else if (gamestate == GameState.GAMEOVER) {
-			GameOver gameOver = new GameOver();
+			
+			System.out.println("Game over");
 			frame.requestFocus();
 			frame.add(gameOver);
+			board.setVisible(false);
 			gameOver.setVisible(true);
+			
 
 		}
 	}
-
 }
