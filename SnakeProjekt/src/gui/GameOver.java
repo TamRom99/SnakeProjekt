@@ -19,10 +19,11 @@ public class GameOver extends JPanel {
 	private static JLabel ScoreLabel;
 
 	private static JButton RestartButton;
+	private static JButton ExitButton;
 
 	public GameOver() {
 		add(createGameOverPanel());
-		setBounds(Screen.xoff, Screen.captionHeight + 150, Screen.width - 2 * Screen.xoff, Screen.height / 2);
+		setBounds(Screen.xoff, Screen.captionHeight + 150, Screen.width - 2 * Screen.xoff, Screen.height / 2 +50);
 		setBackground(Color.BLACK);
 		setLayout(null);
 		setVisible(true);
@@ -63,9 +64,20 @@ public class GameOver extends JPanel {
 			}
 		});
 
+		ExitButton = new JButton("Exit");
+		ExitButton.setFont(new Font("Tahoma", Font.BOLD, 25));
+		ExitButton.setForeground(Color.WHITE);
+		ExitButton.setBackground(Color.ORANGE);
+		ExitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+
 		GameOverPanel.add(GameOverCaption);
 		GameOverPanel.add(ScoreLabel);
 		GameOverPanel.add(RestartButton);
+		GameOverPanel.add(ExitButton);
 		System.out.println("GameOver Menu is build");
 		return GameOverPanel;
 
