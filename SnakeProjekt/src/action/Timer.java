@@ -1,7 +1,9 @@
 package action;
 
 import game.Snake;
+import gui.Board;
 import gui.GameState;
+import gui.MainMenu;
 import gui.Screen;
 
 public class Timer extends Thread {
@@ -17,26 +19,20 @@ public class Timer extends Thread {
 				Snake.waitToMove = false;
 				Collision.collideFood();
 
-				// Free mode
-				/*
-				 * if(Collision.crossLeftBorder()) { Snake.head.setHeadX(Board.NumberOfBoxesX
-				 * -1); } if(Collision.crossRightBorder()) {
-				 * Snake.head.setHeadX(Board.NumberOfBoxesX -35); }
-				 * if(Collision.crossUpperBorder()) { Snake.head.setHeadY(Board.NumberOfBoxesY
-				 * -1); } if(Collision.crossDownBorder()) {
-				 * Snake.head.setHeadY(Board.NumberOfBoxesY -25); }
-				 */
-
-				// CollideItself use at Free and Standard mode
 				if (Collision.collideItself()) {
 					Screen.gamestate = GameState.GAMEOVER;
 					Screen.setGameState();
 					running = false;
 					Snake.tails.clear();
-				}
-
-				// Standard mode - noch zusammenfassen mit CollideItself
-				if (Collision.collideBorder()) {
+				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossLeftBorder()) {
+					Snake.head.setHeadX(Board.NumberOfBoxesX - 1);
+				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossRightBorder()) {
+					Snake.head.setHeadX(Board.NumberOfBoxesX - 35);
+				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossUpperBorder()) {
+					Snake.head.setHeadY(Board.NumberOfBoxesY - 1);
+				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossDownBorder()) {
+					Snake.head.setHeadY(Board.NumberOfBoxesY - 25);
+				} else if (MainMenu.StandardModeRb.isSelected() && Collision.collideBorder()) {
 					Screen.gamestate = GameState.GAMEOVER;
 					Screen.setGameState();
 					running = false;

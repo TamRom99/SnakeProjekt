@@ -18,8 +18,8 @@ public class MainMenu extends JPanel {
 	private JLabel picture;
 	private Icon snakeIcon;
 	private static JButton StartButton;
-	private JRadioButton StandardModeRb;
-	private JRadioButton FreeModeRb;
+	public static JRadioButton StandardModeRb;
+	public static JRadioButton FreeModeRb;
 
 	public MainMenu() {
 		add(createPicture());

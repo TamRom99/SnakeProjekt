@@ -33,14 +33,21 @@ public class Collision {
 	}
 
 	// Free mode
-	/*
-	 * public static boolean crossLeftBorder() { return(Snake.head.getHeadX() < 0) ;
-	 * } public static boolean crossRightBorder() { return(Snake.head.getHeadX() >
-	 * Board.NumberOfBoxesX -1) ; } public static boolean crossUpperBorder() {
-	 * return(Snake.head.getHeadY() < 0) ; } public static boolean crossDownBorder()
-	 * { return(Snake.head.getHeadY() > Board.NumberOfBoxesY -1) ;
-	 * 
-	 * }
-	 */
+	public static boolean crossLeftBorder() {
+		return (Snake.head.getHeadX() < 0);
+	}
+
+	public static boolean crossRightBorder() {
+		return (Snake.head.getHeadX() > Board.NumberOfBoxesX - 1);
+	}
+
+	public static boolean crossUpperBorder() {
+		return (Snake.head.getHeadY() < 0);
+	}
+
+	public static boolean crossDownBorder() {
+		return (Snake.head.getHeadY() > Board.NumberOfBoxesY - 1);
+
+	}
 
 }
