@@ -59,6 +59,7 @@ public class Screen {
 			System.out.println("Game");
 
 		} else if (gamestate == GameState.PAUSE) {
+			Timer.running = false;
 			frame.requestFocus();
 			frame.add(pausemenu);
 			board.setVisible(false);

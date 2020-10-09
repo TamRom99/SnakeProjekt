@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import action.Timer;
+
 public class PauseMenu extends JPanel {
 
 	private JPanel PausePanel;
