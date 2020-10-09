@@ -27,11 +27,11 @@ public class Timer extends Thread {
 				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossLeftBorder()) {
 					Snake.head.setHeadX(Board.NumberOfBoxesX - 1);
 				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossRightBorder()) {
-					Snake.head.setHeadX(Board.NumberOfBoxesX - 35);
+					Snake.head.setHeadX(Board.NumberOfBoxesX - Board.NumberOfBoxesX);
 				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossUpperBorder()) {
 					Snake.head.setHeadY(Board.NumberOfBoxesY - 1);
 				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossDownBorder()) {
-					Snake.head.setHeadY(Board.NumberOfBoxesY - 25);
+					Snake.head.setHeadY(Board.NumberOfBoxesY - Board.NumberOfBoxesY);
 				} else if (MainMenu.StandardModeRb.isSelected() && Collision.collideBorder()) {
 					Screen.gamestate = GameState.GAMEOVER;
 					Screen.setGameState();
