@@ -35,7 +35,7 @@ public class Timer extends Thread {
 					Snake.tails.clear();
 				}
 
-				// Standard mode - noch zusmmenfassen mit CollideItself
+				// Standard mode - noch zusammenfassen mit CollideItself
 				if (Collision.collideBorder()) {
 					Screen.gamestate = GameState.GAMEOVER;
 					Screen.setGameState();

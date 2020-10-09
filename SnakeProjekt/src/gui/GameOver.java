@@ -58,11 +58,10 @@ public class GameOver extends JPanel {
 		RestartButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {				
 				System.out.println("Restart Game");
+				Screen.gamestate = GameState.GAME;
 				Screen.gameOver.setVisible(false);
 				Screen.setGameState();
-				Screen.gamestate = GameState.GAME;
 				Collision.score = 0;
-				
 				Snake.head.setHeadX(Board.NumberOfBoxesX / 2);
 				Snake.head.setHeadY(Board.NumberOfBoxesY / 2);
 				Snake.SnakeInitialize();

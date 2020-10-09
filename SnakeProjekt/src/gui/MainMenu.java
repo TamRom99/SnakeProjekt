@@ -67,6 +67,8 @@ public class MainMenu extends JPanel {
 		StandardModeRb.setBackground(Color.DARK_GRAY);
 		StandardModeRb.setSelected(true);
 		bg.add(StandardModeRb);
+		
+		
 
 		FreeModeRb = new JRadioButton("Free-Mode");
 		FreeModeRb.setFont(new Font("Tahoma", Font.PLAIN, 20));
