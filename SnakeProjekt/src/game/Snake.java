@@ -8,29 +8,29 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
+import action.Timer;
+
 public class Snake {
 	public static boolean waitToMove = false;
 	public static Head head = new Head(Board.NumberOfBoxesX / 2, Board.NumberOfBoxesY / 2);
-	
+
 	public static ArrayList<Tail> tails = new ArrayList<>();
 	public static Food food = new Food();
 
-	
 	public static void SnakeInitialize() {
-		tails.add(new Tail(head.getHeadX(),head.getHeadY()));
-		tails.add(new Tail(head.getHeadX() +1, head.getHeadY()));
-		tails.add(new Tail(head.getHeadX() +2, head.getHeadY()));
-		tails.add(new Tail(head.getHeadX() +3, head.getHeadY()));
-		JFrame frame = (JFrame)
-		SwingUtilities.getWindowAncestor(Screen.menu);
+		tails.add(new Tail(head.getHeadX(), head.getHeadY()));
+		tails.add(new Tail(head.getHeadX() + 1, head.getHeadY()));
+		tails.add(new Tail(head.getHeadX() + 2, head.getHeadY()));
+		tails.add(new Tail(head.getHeadX() + 3, head.getHeadY()));
+		Timer timer = new Timer();
+		timer.start();
+		JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Screen.menu);
 		frame.requestFocusInWindow();
-		
-		
+
 	}
-	
 
 	public static void addTail() {
-			tails.add(new Tail(tails.get(tails.size() - 1).TailX, tails.get(tails.size() - 1).TailY));
+		tails.add(new Tail(tails.get(tails.size() - 1).TailX, tails.get(tails.size() - 1).TailY));
 	}
 
 	public static void move() {

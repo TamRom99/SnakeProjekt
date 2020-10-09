@@ -5,8 +5,9 @@ import gui.Board;
 
 public class Collision {
 
-	public static int score = 0;
+	public static int score;
 
+	//Eat food, grow tail
 	public static void collideFood() {
 		if (Snake.head.getHeadX() == Snake.food.getFoodX() && Snake.head.getHeadY() == Snake.food.getFoodY()) {
 			Snake.addTail();
@@ -16,6 +17,7 @@ public class Collision {
 		}
 	}
 
+	//Collide with Itself
 	public static boolean collideItself() {
 		for (int i = 0; i < Snake.tails.size(); i++) {
 			if (Snake.head.getHeadX() == Snake.tails.get(i).getTailX()

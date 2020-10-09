@@ -5,6 +5,7 @@ import java.awt.Font;
 
 import javax.swing.*;
 
+import action.Collision;
 import action.KeyHandler;
 import action.Timer;
 import game.Snake;
@@ -17,10 +18,10 @@ public class Screen {
 	public static int xoff = 55;
 	public static int yoff = 70;
 	public static GameState gamestate = GameState.MENU;
-	public static MainMenu menu = new MainMenu();
-	public static Board board = new Board();
-	public static PauseMenu pausemenu = new PauseMenu();
-	public static GameOver gameOver = new GameOver();
+	public static MainMenu menu;
+	public static Board board;
+	public static PauseMenu pausemenu;
+	public static GameOver gameOver;
 
 	public void createFrame() {
 		frame = new JFrame("The snake");
@@ -41,7 +42,8 @@ public class Screen {
 		captionLabel.setBounds(0, 0, width, captionHeight);
 		captionLabel.setOpaque(true);
 		frame.getContentPane().add(captionLabel);
-
+		
+		menu = new MainMenu();
 		frame.add(menu);
 
 		frame.setVisible(true);
@@ -50,28 +52,28 @@ public class Screen {
 
 	public static void setGameState() {
 		if (gamestate == GameState.GAME) {
+			board = new Board();
 			frame.add(board);
 			board.setBounds(0, 0, width, height);
-			board.requestFocus();
 			board.setVisible(true);
-			Timer timer = new Timer();
-			timer.start();
+			
 			System.out.println("Game");
 
 		} else if (gamestate == GameState.PAUSE) {
 			Timer.running = false;
-			frame.requestFocus();
+			pausemenu = new PauseMenu();
 			frame.add(pausemenu);
 			board.setVisible(false);
 			pausemenu.setVisible(true);
 			System.out.println("Pause");
 		
 		} else if (gamestate == GameState.GAMEOVER) {
-			frame.requestFocus();
+			gameOver = new GameOver();
 			frame.add(gameOver);
 			board.setVisible(false);
 			gameOver.setVisible(true);
 			System.out.println("Game over");
+			
 
 		}
 	}

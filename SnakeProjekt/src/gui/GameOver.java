@@ -64,9 +64,7 @@ public class GameOver extends JPanel {
 				Collision.score = 0;
 				Snake.head.setHeadX(Board.NumberOfBoxesX / 2);
 				Snake.head.setHeadY(Board.NumberOfBoxesY / 2);
-				Snake.SnakeInitialize();
-				
-				
+				Snake.SnakeInitialize();			
 				
 
 				
@@ -78,7 +76,7 @@ public class GameOver extends JPanel {
 		GameOverPanel.add(GameOverCaption);
 		GameOverPanel.add(ScoreLabel);
 		GameOverPanel.add(RestartButton);
-		System.out.println("Pause Menu is build");
+		System.out.println("GameOver Menu is build");
 		return GameOverPanel;
 
 	}

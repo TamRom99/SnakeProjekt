@@ -28,7 +28,7 @@ public class Board extends JLabel {
 		g.setColor(Color.LIGHT_GRAY);
 		for (int i = 0; i < NumberOfBoxesX; i++) {
 			for (int k = 0; k < NumberOfBoxesY; k++) {
-				g.drawRect(i * 25 + Screen.xoff, k * 25 + Screen.yoff, BoxWidth, BoxHeight);
+				g.drawRect(i * BoxWidth + Screen.xoff, k * BoxHeight + Screen.yoff, BoxWidth, BoxHeight);
 			}
 		}
 		// Draw Border
