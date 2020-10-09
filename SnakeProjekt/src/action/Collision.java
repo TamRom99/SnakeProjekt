@@ -2,7 +2,6 @@ package action;
 
 import game.Snake;
 import gui.Board;
-import timer.Timer;
 
 public class Collision {
 

@@ -1,6 +1,5 @@
-package timer;
+package action;
 
-import action.Collision;
 import game.Snake;
 import gui.GameState;
 import gui.Screen;

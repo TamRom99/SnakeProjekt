@@ -9,8 +9,8 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import action.KeyHandler;
+import action.Timer;
 import game.Snake;
-import timer.Timer;
 
 public class MainMenu extends JPanel {
 

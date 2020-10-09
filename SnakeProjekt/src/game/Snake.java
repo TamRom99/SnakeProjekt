@@ -21,7 +21,8 @@ public class Snake {
 		tails.add(new Tail(head.getHeadX() +1, head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() +2, head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() +3, head.getHeadY()));
-		JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Screen.menu);
+		JFrame frame = (JFrame)
+		SwingUtilities.getWindowAncestor(Screen.menu);
 		frame.requestFocusInWindow();
 		
 		

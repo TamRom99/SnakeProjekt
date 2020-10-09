@@ -12,8 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import action.Collision;
+import action.Timer;
 import game.Snake;
-import timer.Timer;
 
 public class GameOver extends JPanel {
 	
