@@ -56,11 +56,11 @@ public class Screen {
 			frame.add(board);
 			board.setBounds(0, 0, width, height);
 			board.setVisible(true);
-			
+			Snake.timer = new Timer();
 			System.out.println("Game");
 
 		} else if (gamestate == GameState.PAUSE) {
-			Timer.running = false;
+			Snake.timer.stop();
 			pausemenu = new PauseMenu();
 			frame.add(pausemenu);
 			board.setVisible(false);

@@ -16,13 +16,14 @@ public class Snake {
 
 	public static ArrayList<Tail> tails = new ArrayList<>();
 	public static Food food = new Food();
+	public static Timer timer;
 
 	public static void SnakeInitialize() {
 		tails.add(new Tail(head.getHeadX(), head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() + 1, head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() + 2, head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() + 3, head.getHeadY()));
-		Timer timer = new Timer();
+		timer = new Timer();
 		timer.start();
 		JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Screen.menu);
 		frame.requestFocusInWindow();

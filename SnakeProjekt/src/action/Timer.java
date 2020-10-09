@@ -1,20 +1,33 @@
 package action;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import game.Snake;
 import gui.Board;
 import gui.GameState;
 import gui.MainMenu;
 import gui.Screen;
 
-public class Timer extends Thread {
+public class Timer implements Runnable {
+	public Thread runner;
 	public static int millisec = 200;
 
-	public static boolean running = true;
+	public static AtomicBoolean running = new AtomicBoolean(false);
 
+	public void start() {
+		runner = new Thread(this);
+		runner.start();
+	}
+	
+	public void stop() {
+		running.set(false);
+	}
+	
 	public void run() {
-		while (running) {
+		running.set(true);
+		while (running.get()) {
 			try {
-				sleep(millisec);
+				Thread.sleep(millisec);
 				Snake.move();
 				Snake.waitToMove = false;
 				Collision.collideFood();
@@ -22,7 +35,7 @@ public class Timer extends Thread {
 				if (Collision.collideItself()) {
 					Screen.gamestate = GameState.GAMEOVER;
 					Screen.setGameState();
-					running = false;
+					stop();
 					Snake.tails.clear();
 				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossLeftBorder()) {
 					Snake.head.setHeadX(Board.NumberOfBoxesX - 1);
@@ -35,7 +48,7 @@ public class Timer extends Thread {
 				} else if (MainMenu.StandardModeRb.isSelected() && Collision.collideBorder()) {
 					Screen.gamestate = GameState.GAMEOVER;
 					Screen.setGameState();
-					running = false;
+					stop();
 					Snake.tails.clear();
 				}
 			}

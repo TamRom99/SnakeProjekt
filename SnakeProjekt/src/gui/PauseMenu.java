@@ -7,11 +7,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 import action.Timer;
+import game.Snake;
 
 public class PauseMenu extends JPanel {
 
@@ -54,6 +57,9 @@ public class PauseMenu extends JPanel {
 				Screen.setGameState();
 				Screen.board.setVisible(true);
 				Screen.pausemenu.setVisible(false);
+				Snake.timer.start();
+				JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Screen.menu);
+				frame.requestFocusInWindow();
 				System.out.println("Continue Game");
 			}
 		});

@@ -64,8 +64,7 @@ public class GameOver extends JPanel {
 				Collision.score = 0;
 				Snake.head.setHeadX(Board.NumberOfBoxesX / 2);
 				Snake.head.setHeadY(Board.NumberOfBoxesY / 2);
-				Snake.SnakeInitialize();			
-				
+				Snake.SnakeInitialize();
 
 				
 			}
