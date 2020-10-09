@@ -5,6 +5,9 @@ import gui.Screen;
 import java.awt.*;
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 public class Snake {
 	public static boolean waitToMove = false;
 	public static Head head = new Head(Board.NumberOfBoxesX / 2, Board.NumberOfBoxesY / 2);
@@ -18,6 +21,10 @@ public class Snake {
 		tails.add(new Tail(head.getHeadX() +1, head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() +2, head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() +3, head.getHeadY()));
+		JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Screen.menu);
+		frame.requestFocusInWindow();
+		
+		
 	}
 	
 
