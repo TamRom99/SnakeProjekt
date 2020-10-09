@@ -19,7 +19,7 @@ public class Screen {
 	public static GameState gamestate = GameState.MENU;
 	public static MainMenu menu = new MainMenu();
 	public static Board board = new Board();
-
+	public static PauseMenu pausemenu = new PauseMenu();
 	public static GameOver gameOver = new GameOver();
 
 	public void createFrame() {
@@ -56,13 +56,17 @@ public class Screen {
 			board.setVisible(true);
 			Timer timer = new Timer();
 			timer.start();
-			
 			System.out.println("Game");
+
 		} else if (gamestate == GameState.PAUSE) {
-			PauseMenu pausemenu = new PauseMenu();
-			System.out.println("Pause");
+			
+			Timer.currentThread(sleep);
 			frame.requestFocus();
 			frame.add(pausemenu);
+			board.setVisible(false);
+			pausemenu.setVisible(true);
+			System.out.println("Pause");
+		
 		} else if (gamestate == GameState.GAMEOVER) {
 			frame.requestFocus();
 			frame.add(gameOver);

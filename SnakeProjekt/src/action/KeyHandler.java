@@ -4,6 +4,8 @@ import java.awt.event.KeyListener;
 
 import game.Direction;
 import game.Snake;
+import gui.GameState;
+import gui.Screen;
 
 import java.awt.event.KeyEvent;
 
@@ -43,8 +45,15 @@ public class KeyHandler implements KeyListener {
 					Snake.waitToMove = true;
 				}
 				break;
-		}
+				
+			case KeyEvent.VK_SPACE:
+				if (Screen.gamestate == GameState.GAME && !Snake.waitToMove) {
+					Screen.gamestate = GameState.PAUSE;
+					Screen.setGameState();
+				}
+				
 		
+		}	
 	}
 
 	@Override

@@ -48,7 +48,10 @@ public class PauseMenu extends JPanel {
 		ContinueButton.setBackground(Color.BLACK);
 		ContinueButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {				
-				//Screen.gamestate = GameState.GAME;
+				Screen.gamestate = GameState.GAME;		
+				Screen.setGameState();
+				Screen.board.setVisible(true);
+				Screen.pausemenu.setVisible(false);
 				System.out.println("Continue Game");
 			}
 		});
