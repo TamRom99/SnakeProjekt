@@ -56,8 +56,7 @@ public class MainMenu extends JPanel {
 				Screen.setGameState();
 				Screen.menu.setVisible(false);
 				Snake.SnakeInitialize();
-				Timer timer = new Timer();
-				timer.start();
+				
 			}
 		});
 

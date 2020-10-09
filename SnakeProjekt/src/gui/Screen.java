@@ -6,6 +6,8 @@ import java.awt.Font;
 import javax.swing.*;
 
 import action.KeyHandler;
+import action.Timer;
+import game.Snake;
 
 public class Screen {
 	static JFrame frame;
@@ -17,9 +19,9 @@ public class Screen {
 	public static GameState gamestate = GameState.MENU;
 	public static MainMenu menu = new MainMenu();
 	public static Board board = new Board();
-	
+
 	public static GameOver gameOver = new GameOver();
-	
+
 	public void createFrame() {
 		frame = new JFrame("The snake");
 		frame.setSize(width, height);
@@ -48,23 +50,25 @@ public class Screen {
 
 	public static void setGameState() {
 		if (gamestate == GameState.GAME) {
-			System.out.println("Game");
 			frame.add(board);
 			board.setBounds(0, 0, width, height);
-			board.requestFocus();			
+			board.requestFocus();
 			board.setVisible(true);
+			Timer timer = new Timer();
+			timer.start();
+			
+			System.out.println("Game");
 		} else if (gamestate == GameState.PAUSE) {
 			PauseMenu pausemenu = new PauseMenu();
 			System.out.println("Pause");
 			frame.requestFocus();
 			frame.add(pausemenu);
 		} else if (gamestate == GameState.GAMEOVER) {
-			System.out.println("Game over");
 			frame.requestFocus();
 			frame.add(gameOver);
 			board.setVisible(false);
 			gameOver.setVisible(true);
-			
+			System.out.println("Game over");
 
 		}
 	}
