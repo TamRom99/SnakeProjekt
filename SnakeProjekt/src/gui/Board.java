@@ -2,9 +2,7 @@ package gui;
 
 import game.Snake;
 import javax.swing.*;
-
 import action.Collision;
-
 import java.awt.*;
 
 public class Board extends JLabel {

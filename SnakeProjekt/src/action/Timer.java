@@ -18,11 +18,11 @@ public class Timer implements Runnable {
 		runner = new Thread(this);
 		runner.start();
 	}
-	
+
 	public void stop() {
 		running.set(false);
 	}
-	
+
 	public void run() {
 		running.set(true);
 		while (running.get()) {

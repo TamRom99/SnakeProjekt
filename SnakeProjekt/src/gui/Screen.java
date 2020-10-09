@@ -2,10 +2,7 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Font;
-
 import javax.swing.*;
-
-import action.Collision;
 import action.KeyHandler;
 import action.Timer;
 import game.Snake;
@@ -42,7 +39,7 @@ public class Screen {
 		captionLabel.setBounds(0, 0, width, captionHeight);
 		captionLabel.setOpaque(true);
 		frame.getContentPane().add(captionLabel);
-		
+
 		menu = new MainMenu();
 		frame.add(menu);
 
@@ -66,14 +63,13 @@ public class Screen {
 			board.setVisible(false);
 			pausemenu.setVisible(true);
 			System.out.println("Pause");
-		
+
 		} else if (gamestate == GameState.GAMEOVER) {
 			gameOver = new GameOver();
 			frame.add(gameOver);
 			board.setVisible(false);
 			gameOver.setVisible(true);
 			System.out.println("Game over");
-			
 
 		}
 	}
