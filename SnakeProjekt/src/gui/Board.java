@@ -34,7 +34,7 @@ public class Board extends JLabel {
 		g.drawRect(Screen.xoff, Screen.yoff, BoxWidth * NumberOfBoxesX, BoxHeight * NumberOfBoxesY);
 
 		// Draw Head
-		g.setColor(Color.BLUE);
+		g.setColor(new Color(0, 204, 0));
 		p = Snake.coordinates(Snake.head.getHeadX(), Snake.head.getHeadY());
 		g.fillRect(p.x, p.y, BoxWidth, BoxHeight);
 
