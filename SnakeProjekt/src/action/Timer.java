@@ -1,14 +1,13 @@
 package action;
 
 import java.util.concurrent.atomic.AtomicBoolean;
-
 import game.Snake;
 import gui.Board;
 import gui.GameState;
 import gui.MainMenu;
 import gui.Screen;
 
-public class Timer  implements Runnable {
+public class Timer implements Runnable {
 	public Thread runner;
 	public static int millisec = 200;
 
@@ -33,12 +32,13 @@ public class Timer  implements Runnable {
 				Collision.collideFood();
 
 				if (Collision.collideItself()) {
+					System.out.println("Collided with itself");
 					Screen.gamestate = GameState.GAMEOVER;
 					Screen.setGameState();
 					stop();
 					Snake.tails.clear();
 				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossLeftBorder()) {
-					Snake.head.setHeadX(Board.NumberOfBoxesX - 1);
+					Snake.head.setHeadX(Board.NumberOfBoxesX -1);
 				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossRightBorder()) {
 					Snake.head.setHeadX(Board.NumberOfBoxesX - Board.NumberOfBoxesX);
 				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossUpperBorder()) {
@@ -46,6 +46,7 @@ public class Timer  implements Runnable {
 				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossDownBorder()) {
 					Snake.head.setHeadY(Board.NumberOfBoxesY - Board.NumberOfBoxesY);
 				} else if (MainMenu.StandardModeRb.isSelected() && Collision.collideBorder()) {
+					System.out.println("Collided with board");
 					Screen.gamestate = GameState.GAMEOVER;
 					Screen.setGameState();
 					stop();
@@ -54,6 +55,7 @@ public class Timer  implements Runnable {
 			}
 
 			catch (InterruptedException e) {
+				System.out.println("Exception");
 				e.printStackTrace();
 				break;
 			}

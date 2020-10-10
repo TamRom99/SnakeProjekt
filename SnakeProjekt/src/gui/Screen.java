@@ -67,11 +67,12 @@ public class Screen {
 			System.out.println("Pause");
 
 		} else if (gamestate == GameState.GAMEOVER) {
+			System.out.println("Game over");
 			gameOver = new GameOver();
 			frame.add(gameOver);
 			board.setVisible(false);
 			gameOver.setVisible(true);
-			System.out.println("Game over");
+			
 
 		}
 	}

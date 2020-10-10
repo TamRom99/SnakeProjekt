@@ -4,7 +4,7 @@ public class Head {
 
 	int HeadX;
 	int HeadY;
-	Direction direction = Direction.LEFT;
+	Direction direction;
 
 	public Head(int headX, int headY) {
 		super();

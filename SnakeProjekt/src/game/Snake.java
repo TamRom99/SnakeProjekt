@@ -4,10 +4,8 @@ import gui.Board;
 import gui.Screen;
 import java.awt.*;
 import java.util.ArrayList;
-
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-
 import action.Timer;
 
 public class Snake {
@@ -25,6 +23,8 @@ public class Snake {
 		tails.add(new Tail(head.getHeadX() + 3, head.getHeadY()));
 		timer = new Timer();
 		timer.start();
+		head.setDirection(Direction.LEFT);
+		
 		JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Screen.menu);
 		frame.requestFocusInWindow();
 
