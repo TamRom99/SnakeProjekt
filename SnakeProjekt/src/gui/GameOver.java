@@ -10,16 +10,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import action.Collision;
+import action.Timer;
 import game.Snake;
 
 public class GameOver extends JPanel {
 
-	private static JPanel GameOverPanel;
-	private static JLabel GameOverCaption;
-	private static JLabel ScoreLabel;
-
-	private static JButton RestartButton;
-	private static JButton ExitButton;
+	private JPanel GameOverPanel;
+	private JLabel GameOverCaption;
+	private JLabel ScoreLabel;
+	private JButton RestartButton;
+	private JButton ExitButton;
 
 	public GameOver() {
 		add(createGameOverPanel());
@@ -51,16 +51,16 @@ public class GameOver extends JPanel {
 		RestartButton.setForeground(Color.WHITE);
 		RestartButton.setBackground(Color.ORANGE);
 		RestartButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Restart Game");
+			public void actionPerformed(ActionEvent e) {
 				Screen.gamestate = GameState.GAME;
-				Screen.gameOver.setVisible(false);
 				Screen.setGameState();
+				Screen.gameOver.setVisible(false);
 				Collision.score = 0;
+				Timer.millisec = 200;
 				Snake.head.setHeadX(Board.NumberOfBoxesX / 2);
 				Snake.head.setHeadY(Board.NumberOfBoxesY / 2);
 				Snake.SnakeInitialize();
-
+				System.out.println("Restart Game");
 			}
 		});
 
@@ -69,7 +69,7 @@ public class GameOver extends JPanel {
 		ExitButton.setForeground(Color.WHITE);
 		ExitButton.setBackground(Color.ORANGE);
 		ExitButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});

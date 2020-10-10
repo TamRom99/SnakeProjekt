@@ -8,7 +8,8 @@ import action.Timer;
 import game.Snake;
 
 public class Screen {
-	static JFrame frame;
+	private static JFrame frame;
+	private JLabel captionLabel;
 	static int height = 850;
 	static int width = 1000;
 	static int captionHeight = height / 17;
@@ -16,9 +17,9 @@ public class Screen {
 	public static int yoff = 70;
 	public static GameState gamestate = GameState.MENU;
 	public static MainMenu menu;
-	public static Board board;
-	public static PauseMenu pausemenu;
-	public static GameOver gameOver;
+	static Board board;
+	static PauseMenu pausemenu;
+	static GameOver gameOver;
 
 	public void createFrame() {
 		frame = new JFrame("The snake");
@@ -28,21 +29,22 @@ public class Screen {
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.setResizable(true);
-
 		frame.addKeyListener(new KeyHandler());
 
-		JLabel captionLabel = new JLabel("Snake");
+		captionLabel = new JLabel("Snake");
 		captionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		captionLabel.setFont(new Font("Cambria Math", Font.BOLD, 30));
 		captionLabel.setForeground(new Color(127, 255, 0));
 		captionLabel.setBackground(new Color(0, 0, 128));
 		captionLabel.setBounds(0, 0, width, captionHeight);
-		captionLabel.setOpaque(true);
-		frame.getContentPane().add(captionLabel);
-
+		captionLabel.setOpaque(true);		
+		frame.add(captionLabel);
+		
+		
 		menu = new MainMenu();
 		frame.add(menu);
-
+		
+		
 		frame.setVisible(true);
 		System.out.println("Window made");
 	}

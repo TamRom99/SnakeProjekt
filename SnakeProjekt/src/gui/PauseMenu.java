@@ -16,8 +16,8 @@ import game.Snake;
 public class PauseMenu extends JPanel {
 
 	private JPanel PausePanel;
-	private static JLabel PauseCaption;
-	private static JButton ContinueButton;
+	private JLabel PauseCaption;
+	private JButton ContinueButton;
 
 	public PauseMenu() {
 		add(createPauseMenuPanel());

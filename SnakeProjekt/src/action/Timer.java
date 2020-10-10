@@ -8,7 +8,7 @@ import gui.GameState;
 import gui.MainMenu;
 import gui.Screen;
 
-public class Timer implements Runnable {
+public class Timer  implements Runnable {
 	public Thread runner;
 	public static int millisec = 200;
 
