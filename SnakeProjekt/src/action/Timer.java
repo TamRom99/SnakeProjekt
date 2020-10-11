@@ -51,11 +51,11 @@ public class Timer implements Runnable {
 
 				if (MainMenu.FreeModeRb.isSelected()) {
 					if (Collision.crossLeftBorder()) {
-						Snake.head.setHeadX(Board.NumberOfBoxesX);						
+						Snake.head.setHeadX(Board.NumberOfBoxesX -1);						
 					} else if (Collision.crossRightBorder()) {
 						Snake.head.setHeadX(0);
 					} else if (Collision.crossUpperBorder()) {
-						Snake.head.setHeadY(Board.NumberOfBoxesY);						
+						Snake.head.setHeadY(Board.NumberOfBoxesY -1);						
 					} else if (Collision.crossDownBorder()) {
 						Snake.head.setHeadY(0);
 					}
