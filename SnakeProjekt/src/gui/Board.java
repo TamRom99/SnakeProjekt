@@ -6,6 +6,11 @@ import action.Collision;
 import java.awt.*;
 
 public class Board extends JLabel {
+	/**
+	 * @author Tamara Romer
+	 * The class board is responsible for drawing the playing field and the game components.
+	 */
+	
 	public static int NumberOfBoxesX = 35;
 	public static int NumberOfBoxesY = 25;
 	public static int BoxWidth = 25;
@@ -55,7 +60,6 @@ public class Board extends JLabel {
 		g.fillOval(300, 725, 400, 50);
 		g.setColor(new Color(0, 0, 128));
 		g.setFont(new Font("Arial", Font.BOLD, 20));
-
 		g.drawString("Score: " + Collision.score, 470, 760);
 
 		repaint();

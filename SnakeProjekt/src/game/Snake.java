@@ -4,27 +4,28 @@ import gui.Board;
 import gui.Screen;
 import java.awt.*;
 import java.util.ArrayList;
+
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+
 import action.Timer;
 
 public class Snake {
 	public static boolean waitToMove = false;
 	public static Head head = new Head(Board.NumberOfBoxesX / 2, Board.NumberOfBoxesY / 2);
-
 	public static ArrayList<Tail> tails = new ArrayList<>();
 	public static Food food = new Food();
 	public static Timer timer;
+	
 
 	public static void SnakeInitialize() {
+		head.setDirection(Direction.LEFT);
 		tails.add(new Tail(head.getHeadX(), head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() + 1, head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() + 2, head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() + 3, head.getHeadY()));
 		timer = new Timer();
 		timer.start();
-		head.setDirection(Direction.LEFT);
-		
 		JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Screen.menu);
 		frame.requestFocusInWindow();
 

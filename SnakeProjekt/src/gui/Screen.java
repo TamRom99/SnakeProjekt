@@ -8,6 +8,10 @@ import action.Timer;
 import game.Snake;
 
 public class Screen {
+	/**
+	 * @author Tamara Romer
+	 * The Screen class creates the window and performs the graphical content changes.
+	 */
 	private static JFrame frame;
 	private JLabel captionLabel;
 	static int height = 850;
@@ -67,12 +71,11 @@ public class Screen {
 			System.out.println("Pause");
 
 		} else if (gamestate == GameState.GAMEOVER) {
-			System.out.println("Game over");
 			gameOver = new GameOver();
 			frame.add(gameOver);
 			board.setVisible(false);
 			gameOver.setVisible(true);
-			
+			System.out.println("Game over");
 
 		}
 	}

@@ -11,8 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import action.Collision;
 import action.Timer;
-import game.Direction;
-import game.Head;
 import game.Snake;
 
 public class GameOver extends JPanel {
@@ -72,7 +70,6 @@ public class GameOver extends JPanel {
 		ExitButton.setBackground(Color.ORANGE);
 		ExitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Close game");
 				System.exit(0);
 			}
 		});

@@ -1,6 +1,7 @@
 package action;
 
 import java.util.concurrent.atomic.AtomicBoolean;
+
 import game.Snake;
 import gui.Board;
 import gui.GameState;
@@ -32,30 +33,37 @@ public class Timer implements Runnable {
 				Collision.collideFood();
 
 				if (Collision.collideItself()) {
-					System.out.println("Collided with itself");
 					Screen.gamestate = GameState.GAMEOVER;
 					Screen.setGameState();
 					stop();
 					Snake.tails.clear();
-				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossLeftBorder()) {
-					Snake.head.setHeadX(Board.NumberOfBoxesX -1);
-				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossRightBorder()) {
-					Snake.head.setHeadX(Board.NumberOfBoxesX - Board.NumberOfBoxesX);
-				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossUpperBorder()) {
-					Snake.head.setHeadY(Board.NumberOfBoxesY - 1);
-				} else if (MainMenu.FreeModeRb.isSelected() && Collision.crossDownBorder()) {
-					Snake.head.setHeadY(Board.NumberOfBoxesY - Board.NumberOfBoxesY);
-				} else if (MainMenu.StandardModeRb.isSelected() && Collision.collideBorder()) {
-					System.out.println("Collided with board");
+
+				}
+
+				if (MainMenu.StandardModeRb.isSelected() && Collision.collideBorder()) {
 					Screen.gamestate = GameState.GAMEOVER;
 					Screen.setGameState();
 					stop();
 					Snake.tails.clear();
 				}
+				
+				
+
+				if (MainMenu.FreeModeRb.isSelected()) {
+					if (Collision.crossLeftBorder()) {
+						Snake.head.setHeadX(Board.NumberOfBoxesX);						
+					} else if (Collision.crossRightBorder()) {
+						Snake.head.setHeadX(0);
+					} else if (Collision.crossUpperBorder()) {
+						Snake.head.setHeadY(Board.NumberOfBoxesY);						
+					} else if (Collision.crossDownBorder()) {
+						Snake.head.setHeadY(0);
+					}
+				}
+
 			}
 
 			catch (InterruptedException e) {
-				System.out.println("Exception");
 				e.printStackTrace();
 				break;
 			}
