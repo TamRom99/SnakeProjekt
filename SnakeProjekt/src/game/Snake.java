@@ -19,6 +19,8 @@ public class Snake {
 	public static Food food = new Food();
 	public static Timer timer;
 
+	/**
+	 */
 	public static void SnakeInitialize() {
 		head.setDirection(Direction.LEFT);
 		tails.add(new Tail(head.getHeadX(), head.getHeadY()));
@@ -33,10 +35,14 @@ public class Snake {
 
 	}
 
+	/**
+	 */
 	public static void addTail() {
 		tails.add(new Tail(tails.get(tails.size() - 1).TailX, tails.get(tails.size() - 1).TailY));
 	}
 
+	/**
+	 */
 	public static void move() {
 		if (tails.size() >= 2) {
 			for (int i = tails.size() - 1; i >= 1; i--) {
@@ -75,6 +81,8 @@ public class Snake {
 
 	}
 
+	/**
+	 */
 	public static Point coordinates(int x, int y) {
 		Point p = new Point(0, 0);
 		p.x = x * Board.BoxWidth + Screen.xoff;

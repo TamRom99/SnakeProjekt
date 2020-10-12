@@ -12,6 +12,8 @@ public class Collision {
 	public static int score;
 
 	// Eat food, grow tail
+	/**
+	 */
 	public static void collideFood() {
 		if (Snake.head.getHeadX() == Snake.food.getFoodX() && Snake.head.getHeadY() == Snake.food.getFoodY()) {
 			Snake.addTail();
@@ -22,6 +24,8 @@ public class Collision {
 	}
 
 	// Collide with Itself
+	/**
+	 */
 	public static boolean collideItself() {
 		for (int i = 0; i < Snake.tails.size(); i++) {
 			if (Snake.head.getHeadX() == Snake.tails.get(i).getTailX()
@@ -33,12 +37,16 @@ public class Collision {
 	}
 
 	// Standard mode
+	/**
+	 */
 	public static boolean collideBorder() {
 		return (Snake.head.getHeadX() < 0 || Snake.head.getHeadX() > Board.NumberOfBoxesX - 1
 				|| Snake.head.getHeadY() < 0 || Snake.head.getHeadY() > Board.NumberOfBoxesY - 1);
 	}
 
 	// Free mode
+	/**
+	 */
 	public static boolean crossLeftBorder() {
 		return (Snake.head.getHeadX() < 0);
 	}

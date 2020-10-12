@@ -24,6 +24,8 @@ public class PauseMenu extends JPanel {
 	private JLabel PauseCaption;
 	private JButton ContinueButton;
 
+	/**
+	 */
 	public PauseMenu() {
 		add(createPauseMenuPanel());
 		setBounds(0, Screen.height / 3, Screen.width, Screen.height / 4);
@@ -33,6 +35,8 @@ public class PauseMenu extends JPanel {
 
 	}
 
+	/**
+	 */
 	private JPanel createPauseMenuPanel() {
 		PausePanel = new JPanel();
 		PausePanel.setBounds(Screen.width / 3, 0, Screen.width / 3, Screen.height / 5);

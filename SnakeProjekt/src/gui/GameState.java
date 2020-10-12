@@ -1,7 +1,7 @@
 package gui;
 
 /**
- * @author
+ * @author Tamara Romer
  */
 
 public enum GameState {

@@ -21,6 +21,8 @@ public class MainMenu extends JPanel {
 	public static JRadioButton StandardModeRb;
 	public static JRadioButton FreeModeRb;
 
+	/**
+	 */
 	public MainMenu() {
 		add(createPicture());
 		add(createMainMenuPanel());
@@ -31,6 +33,8 @@ public class MainMenu extends JPanel {
 
 	}
 
+	/**
+	 */
 	private JLabel createPicture() {
 		snakeIcon = new ImageIcon(getClass().getResource("SnakeIcon.png"));
 		picture = new JLabel(snakeIcon);
@@ -39,6 +43,8 @@ public class MainMenu extends JPanel {
 		return picture;
 	}
 
+	/**
+	 */
 	private JPanel createMainMenuPanel() {
 		menuPanel = new JPanel();
 		menuPanel.setBounds(Screen.width / 3, Screen.height / 2, Screen.width / 3, Screen.height / 3);

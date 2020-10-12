@@ -24,7 +24,9 @@ public class Timer implements Runnable {
 	public void stop() {
 		running.set(false);
 	}
-
+	
+	/**
+	 */
 	public void run() {
 		running.set(true);
 		while (running.get()) {

@@ -14,7 +14,7 @@ import action.Timer;
 import game.Snake;
 
 /**
- * @author
+ * @author Tamara Romer
  */
 
 public class GameOver extends JPanel {
@@ -25,6 +25,8 @@ public class GameOver extends JPanel {
 	private JButton RestartButton;
 	private JButton ExitButton;
 
+	/**
+	 */
 	public GameOver() {
 		add(createGameOverPanel());
 		setBounds(Screen.xoff, Screen.captionHeight + 150, Screen.width - 2 * Screen.xoff, Screen.height / 2 + 50);
@@ -34,6 +36,8 @@ public class GameOver extends JPanel {
 
 	}
 
+	/**
+	 */
 	private JPanel createGameOverPanel() {
 		GameOverPanel = new JPanel();
 		GameOverPanel.setBounds(Screen.width / 5, 0, Screen.width / 2, Screen.height / 2);

@@ -29,6 +29,8 @@ public class Screen {
 	static PauseMenu pausemenu;
 	static GameOver gameOver;
 
+	/**
+	 */
 	public void createFrame() {
 		frame = new JFrame("The snake");
 		frame.setSize(width, height);
@@ -55,6 +57,8 @@ public class Screen {
 		System.out.println("Window made");
 	}
 
+	/**
+	 */
 	public static void setGameState() {
 		if (gamestate == GameState.GAME) {
 			board = new Board();
