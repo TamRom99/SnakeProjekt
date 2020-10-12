@@ -8,7 +8,7 @@ import gui.MainMenu;
 import gui.Board;
 
 /**
- * @author
+ * @author Chiara Frankenbach
  */
 
 public class Timer implements Runnable {
@@ -16,11 +16,15 @@ public class Timer implements Runnable {
 	public static int millisec = 200;
 	private AtomicBoolean running = new AtomicBoolean(false);
 
+	/**
+	 */
 	public void start() {
 		runner = new Thread(this);
 		runner.start();
 	}
 
+	/**
+	 */
 	public void stop() {
 		running.set(false);
 	}

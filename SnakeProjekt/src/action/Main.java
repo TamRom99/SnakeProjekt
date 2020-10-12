@@ -3,7 +3,7 @@ package action;
 import gui.Screen;
 
 /**
- * @author
+ * @author Tamara Romer
  */
 
 public class Main {

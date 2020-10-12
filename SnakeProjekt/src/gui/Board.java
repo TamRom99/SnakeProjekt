@@ -1,7 +1,12 @@
 package gui;
 
+import java.awt.Point;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JLabel;
-import java.awt.*;
 import game.Snake;
 import action.Collision;
 
@@ -18,6 +23,8 @@ public class Board extends JLabel {
 	public static int BoxHeight = 25;
 	Point p;
 
+	/**
+	 */
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
