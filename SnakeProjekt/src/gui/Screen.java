@@ -18,6 +18,7 @@ import game.Snake;
 
 public class Screen {
 
+	// Declaration of the frame,its variables and the different menus
 	private static JFrame frame;
 	private JLabel captionLabel;
 	static int height = 850;
@@ -32,17 +33,28 @@ public class Screen {
 	static GameOver gameOver;
 
 	/**
+	 * The method creates the frame window in which the complete graphic is
+	 * displayed. The frame window is not assigned a layout and is displayed in the
+	 * middle of the screen. For the keyboard input the keylistener is added to the
+	 * window.
 	 */
 	public void createFrame() {
+
+		// Create the frame
 		frame = new JFrame("The snake");
 		frame.setSize(width, height);
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+		// Places the window in the center of the screen
 		frame.setLocationRelativeTo(null);
+		// Adds the layout null and the backgroundcolor darkgrey to the window
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
-		frame.setResizable(true);
+		// Does not allow to drag the game larger
+		frame.setResizable(false);
+		// Adds keylistener for keyboard input to the window
 		frame.addKeyListener(new KeyHandler());
 
+		// Create and add the MainCaption of the game
 		captionLabel = new JLabel("Snake");
 		captionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		captionLabel.setFont(new Font("Cambria Math", Font.BOLD, 30));
@@ -52,6 +64,7 @@ public class Screen {
 		captionLabel.setOpaque(true);
 		frame.add(captionLabel);
 
+		// Instantiation and addition of the game menu
 		menu = new MainMenu();
 		frame.add(menu);
 
@@ -60,8 +73,13 @@ public class Screen {
 	}
 
 	/**
+	 * The method uses If-branches and the game state of the enum to perform
+	 * graphical changes in the window.
+	 * 
+	 * @author Tamara Romer, Ilayda Alkan, Chiara Frankenhauser
 	 */
 	public static void setGameState() {
+		//Performs the graphic change to the playing field
 		if (gamestate == GameState.GAME) {
 			board = new Board();
 			frame.add(board);
@@ -69,7 +87,8 @@ public class Screen {
 			board.setVisible(true);
 			Snake.timer = new Timer();
 			System.out.println("Game");
-
+			
+		//Performs the graphical change to the pause menu
 		} else if (gamestate == GameState.PAUSE) {
 			Snake.timer.stop();
 			pausemenu = new PauseMenu();
@@ -77,7 +96,8 @@ public class Screen {
 			board.setVisible(false);
 			pausemenu.setVisible(true);
 			System.out.println("Pause");
-
+			
+		//Performs the graphical change to the game over display
 		} else if (gamestate == GameState.GAMEOVER) {
 			gameOver = new GameOver();
 			frame.add(gameOver);

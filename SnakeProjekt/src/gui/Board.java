@@ -18,7 +18,8 @@ import action.Collision;
  */
 
 public class Board extends JLabel {
-
+	
+	//Declaration of field and box width and height
 	public static int NumberOfBoxesX = 35;
 	public static int NumberOfBoxesY = 25;
 	public static int BoxWidth = 25;
@@ -26,12 +27,16 @@ public class Board extends JLabel {
 	Point p;
 
 	/**
+	 * The PaintComponent method with the Graphics g parameter is used to draw the elements. 
+	 * The Graphics object is casted to Graphics2D to improve the display.
+	 * By setRenderingHint the anti-aliasing is turned on, which smoothes the edges and avoids steps.
 	 */
+	
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
+		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
 		// Draw Background
 		g.setColor(Color.DARK_GRAY);
