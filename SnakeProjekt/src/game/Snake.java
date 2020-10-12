@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import java.awt.Point;
 import gui.Board;
+import gui.MainMenu;
 import gui.Screen;
 import action.Timer;
 
@@ -64,19 +65,57 @@ public class Snake {
 		}
 
 		// Move Head
-		switch (head.getDirection()) {
-		case RIGHT:
-			head.setHeadX(head.getHeadX() + 1);
-			break;
-		case LEFT:
-			head.setHeadX(head.getHeadX() - 1);
-			break;
-		case UP:
-			head.setHeadY(head.getHeadY() - 1);
-			break;
-		case DOWN:
-			head.setHeadY(head.getHeadY() + 1);
-			break;
+		if (MainMenu.FreeModeRb.isSelected()) {
+			switch (head.getDirection()) {
+				case RIGHT:
+					if (head.getHeadX() < Board.NumberOfBoxesX -1) {
+						head.setHeadX(head.getHeadX() + 1);
+					}
+					else {
+						head.setHeadX(0);
+					}
+					break;
+				case LEFT:
+					if (head.getHeadX() > 0) {
+						head.setHeadX(head.getHeadX() - 1);
+					}
+					else {
+						head.setHeadX(Board.NumberOfBoxesX -1);
+					}
+					break;
+				case UP:
+					if (head.getHeadY() > 0) {
+						head.setHeadY(head.getHeadY() - 1);
+					}
+					else {
+						head.setHeadY(Board.NumberOfBoxesY -1);
+					}
+					break;
+				case DOWN:
+					if (head.getHeadY() < Board.NumberOfBoxesY -1) {
+						head.setHeadY(head.getHeadY() + 1);
+					}
+					else {
+						head.setHeadY(0);
+					}
+					break;
+				}
+		}
+		else if(MainMenu.StandardModeRb.isSelected()) {
+			switch (head.getDirection()) {
+			case RIGHT:
+				head.setHeadX(head.getHeadX() +1);
+				break;
+			case LEFT:
+				head.setHeadX(head.getHeadX() -1);
+				break;
+			case UP:
+				head.setHeadY(head.getHeadY() -1);
+				break;
+			case DOWN:
+				head.setHeadY(head.getHeadY() +1);
+				break;
+			}
 		}
 
 	}
