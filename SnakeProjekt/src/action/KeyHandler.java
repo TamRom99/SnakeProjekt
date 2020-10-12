@@ -8,8 +8,10 @@ import gui.Screen;
 import gui.GameState;
 
 /**
- * @author Chiara Frankenbach The class KeyHandler is used to control the snake
- *         with the arrow keys and to stop it with the space bar.
+ * The class KeyHandler is used to control the snake with the arrow keys and to
+ * stop it with the space bar.
+ * 
+ * @author Chiara Frankenbach
  */
 
 public class KeyHandler implements KeyListener {

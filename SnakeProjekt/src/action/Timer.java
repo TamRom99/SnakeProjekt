@@ -8,6 +8,8 @@ import gui.MainMenu;
 import gui.Board;
 
 /**
+ * Timer lets the snake moving and stopping.
+ * 
  * @author Chiara Frankenbach
  */
 
@@ -17,6 +19,7 @@ public class Timer implements Runnable {
 	private AtomicBoolean running = new AtomicBoolean(false);
 
 	/**
+	 * Method to start or restart the snake.
 	 */
 	public void start() {
 		runner = new Thread(this);
@@ -24,12 +27,19 @@ public class Timer implements Runnable {
 	}
 
 	/**
+	 * Method to stop the snake.
 	 */
 	public void stop() {
 		running.set(false);
 	}
-	
+
 	/**
+	 * Moving the snake forward in constant steps. Furthermore stop the snake if it
+	 * collides with itself and if Standard Mode is selected with the border too. If
+	 * Free Mode is chosen turn to the other side of the border.
+	 * 
+	 * @author of collision cases Ilayda Alkan - revised from Tamara Romer and
+	 *         Chiara Frankenbach
 	 */
 	public void run() {
 		running.set(true);

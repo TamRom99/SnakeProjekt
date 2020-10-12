@@ -10,8 +10,10 @@ import action.Timer;
 import game.Snake;
 
 /**
- * @author Tamara Romer The Screen class creates the window and performs the
- *         graphical content changes.
+ * The Screen class creates the window and performs the graphical content
+ * changes.
+ * 
+ * @author Tamara Romer
  */
 
 public class Screen {
@@ -67,7 +69,7 @@ public class Screen {
 			board.setVisible(true);
 			Snake.timer = new Timer();
 			System.out.println("Game");
-			
+
 		} else if (gamestate == GameState.PAUSE) {
 			Snake.timer.stop();
 			pausemenu = new PauseMenu();
@@ -75,7 +77,7 @@ public class Screen {
 			board.setVisible(false);
 			pausemenu.setVisible(true);
 			System.out.println("Pause");
-			
+
 		} else if (gamestate == GameState.GAMEOVER) {
 			gameOver = new GameOver();
 			frame.add(gameOver);

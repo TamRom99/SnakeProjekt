@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import game.Snake;
 
 /**
- * @author
+ * @author Tamara Romer
  */
 
 public class MainMenu extends JPanel {

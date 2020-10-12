@@ -14,8 +14,10 @@ import javax.swing.SwingUtilities;
 import game.Snake;
 
 /**
- * @author Tamara Romer In the PauseMenu class, Swing is used to display the
- *         pause menu that can be called during the game with the spacebar.
+ * In the PauseMenu class, Swing is used to display the pause menu that can be
+ * called during the game with the space bar.
+ * 
+ * @author Tamara Romer
  */
 
 public class PauseMenu extends JPanel {

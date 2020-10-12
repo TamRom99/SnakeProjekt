@@ -10,7 +10,7 @@ import gui.Screen;
 import action.Timer;
 
 /**
- * @author
+ * @authors Tamara Romer and Chiara Frankenbach
  */
 
 public class Snake {

@@ -11,8 +11,10 @@ import game.Snake;
 import action.Collision;
 
 /**
- * @author Tamara Romer The class board is responsible for drawing the playing
- *         field and the game components.
+ * The class board is responsible for drawing the playing field and the game
+ * components.
+ * 
+ * @author Tamara Romer
  */
 
 public class Board extends JLabel {
