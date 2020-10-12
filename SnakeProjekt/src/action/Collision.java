@@ -3,6 +3,10 @@ package action;
 import game.Snake;
 import gui.Board;
 
+/**
+ * @author Ilayda Alkan
+ */
+
 public class Collision {
 
 	public static int score;

@@ -8,12 +8,16 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import game.Snake;
 
+/**
+ * @author
+ */
+
 public class MainMenu extends JPanel {
 
 	private JPanel menuPanel;
 	private JLabel picture;
 	private Icon snakeIcon;
-	private static JButton StartButton;
+	private JButton StartButton;
 	public static JRadioButton StandardModeRb;
 	public static JRadioButton FreeModeRb;
 
@@ -52,7 +56,7 @@ public class MainMenu extends JPanel {
 				Screen.setGameState();
 				Screen.menu.setVisible(false);
 				Snake.SnakeInitialize();
-				
+
 			}
 		});
 
@@ -63,8 +67,6 @@ public class MainMenu extends JPanel {
 		StandardModeRb.setBackground(Color.DARK_GRAY);
 		StandardModeRb.setSelected(true);
 		bg.add(StandardModeRb);
-		
-		
 
 		FreeModeRb = new JRadioButton("Free-Mode");
 		FreeModeRb.setFont(new Font("Tahoma", Font.PLAIN, 20));

@@ -1,17 +1,21 @@
 package gui;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.*;
 import action.KeyHandler;
 import action.Timer;
 import game.Snake;
 
+/**
+ * @author Tamara Romer The Screen class creates the window and performs the
+ *         graphical content changes.
+ */
+
 public class Screen {
-	/**
-	 * @author Tamara Romer
-	 * The Screen class creates the window and performs the graphical content changes.
-	 */
+
 	private static JFrame frame;
 	private JLabel captionLabel;
 	static int height = 850;
@@ -41,14 +45,12 @@ public class Screen {
 		captionLabel.setForeground(new Color(127, 255, 0));
 		captionLabel.setBackground(new Color(0, 0, 128));
 		captionLabel.setBounds(0, 0, width, captionHeight);
-		captionLabel.setOpaque(true);		
+		captionLabel.setOpaque(true);
 		frame.add(captionLabel);
-		
-		
+
 		menu = new MainMenu();
 		frame.add(menu);
-		
-		
+
 		frame.setVisible(true);
 		System.out.println("Window made");
 	}

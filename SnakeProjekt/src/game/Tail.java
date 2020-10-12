@@ -1,10 +1,14 @@
 package game;
 
+/**
+ * @author
+ */
+
 public class Tail {
 
 	int TailX;
 	int TailY;
-	boolean wait = true;
+	private boolean wait = true;
 
 	public Tail(int tailX, int tailY) {
 		super();

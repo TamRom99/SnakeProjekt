@@ -13,6 +13,10 @@ import action.Collision;
 import action.Timer;
 import game.Snake;
 
+/**
+ * @author
+ */
+
 public class GameOver extends JPanel {
 
 	private JPanel GameOverPanel;
@@ -23,7 +27,7 @@ public class GameOver extends JPanel {
 
 	public GameOver() {
 		add(createGameOverPanel());
-		setBounds(Screen.xoff, Screen.captionHeight + 150, Screen.width - 2 * Screen.xoff, Screen.height / 2 +50);
+		setBounds(Screen.xoff, Screen.captionHeight + 150, Screen.width - 2 * Screen.xoff, Screen.height / 2 + 50);
 		setBackground(Color.BLACK);
 		setLayout(null);
 		setVisible(true);

@@ -1,16 +1,17 @@
 package gui;
 
-import game.Snake;
-import javax.swing.*;
-import action.Collision;
+import javax.swing.JLabel;
 import java.awt.*;
+import game.Snake;
+import action.Collision;
+
+/**
+ * @author Tamara Romer The class board is responsible for drawing the playing
+ *         field and the game components.
+ */
 
 public class Board extends JLabel {
-	/**
-	 * @author Tamara Romer
-	 * The class board is responsible for drawing the playing field and the game components.
-	 */
-	
+
 	public static int NumberOfBoxesX = 35;
 	public static int NumberOfBoxesY = 25;
 	public static int BoxWidth = 25;
@@ -23,7 +24,7 @@ public class Board extends JLabel {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
 
-		// Draw background
+		// Draw Background
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, 0, Screen.width, Screen.height);
 

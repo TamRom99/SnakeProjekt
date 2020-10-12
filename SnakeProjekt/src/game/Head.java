@@ -1,10 +1,14 @@
 package game;
 
+/**
+ * @author
+ */
+
 public class Head {
 
-	int HeadX;
-	int HeadY;
-	Direction direction;
+	private int HeadX;
+	private int HeadY;
+	private Direction direction;
 
 	public Head(int headX, int headY) {
 		super();

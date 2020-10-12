@@ -1,12 +1,16 @@
 package action;
 
 import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
 import game.Direction;
 import game.Snake;
-import gui.GameState;
 import gui.Screen;
+import gui.GameState;
 
-import java.awt.event.KeyEvent;
+/**
+ * @author Chiara Frankenbach The class KeyHandler is used to control the snake
+ *         with the arrow keys and to stop it with the space bar.
+ */
 
 public class KeyHandler implements KeyListener {
 

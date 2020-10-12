@@ -1,14 +1,16 @@
 package game;
 
-import gui.Board;
-import gui.Screen;
-import java.awt.*;
 import java.util.ArrayList;
-
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-
+import java.awt.Point;
+import gui.Board;
+import gui.Screen;
 import action.Timer;
+
+/**
+ * @author
+ */
 
 public class Snake {
 	public static boolean waitToMove = false;
@@ -16,7 +18,6 @@ public class Snake {
 	public static ArrayList<Tail> tails = new ArrayList<>();
 	public static Food food = new Food();
 	public static Timer timer;
-	
 
 	public static void SnakeInitialize() {
 		head.setDirection(Direction.LEFT);
@@ -26,6 +27,7 @@ public class Snake {
 		tails.add(new Tail(head.getHeadX() + 3, head.getHeadY()));
 		timer = new Timer();
 		timer.start();
+
 		JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Screen.menu);
 		frame.requestFocusInWindow();
 
