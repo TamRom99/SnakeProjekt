@@ -68,7 +68,8 @@ public class PauseMenu extends JPanel {
 		ContinueButton.setBackground(Color.BLACK);
 		ContinueButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Sets the game state to game and calls the setGameMethode to change graphics
+				// Sets the game state to game and calls the setGameStateMethod to change
+				// graphics
 				Screen.gamestate = GameState.GAME;
 				Screen.setGameState();
 				// Makes the pause menu disappear and shows the board

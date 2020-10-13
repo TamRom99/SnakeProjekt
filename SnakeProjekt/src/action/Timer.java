@@ -37,7 +37,7 @@ public class Timer {
 	}
 
 	/**
-	 * Lets the snake moving faster with every collected food.
+	 * Lets the snake moving faster per 5 milliseconds.
 	 */
 	private void decreaseInterval() {
 		if (millisec >= 10) {
@@ -49,33 +49,43 @@ public class Timer {
 	}
 
 	/**
-	 * Moving the snake forward in constant steps. Furthermore stop the snake if it
-	 * collides with itself and if Standard Mode is selected with the border too. If
-	 * Free Mode is chosen turn to the other side of the border.
+	 * Declaration of the swing timer, which lets the snake moving forward in
+	 * constant steps. Furthermore stops the snake if it collides with itself and if
+	 * Standard Mode is selected with the border too. If Free Mode is chosen turn to
+	 * the other side of the field.
 	 * 
 	 * @author of collision cases Ilayda Alkan - revised from Tamara Romer and
 	 *         Chiara Frankenbach
 	 */
 	javax.swing.Timer timer = new javax.swing.Timer(millisec, new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
+			// When the snake don't wait to move, move
 			Snake.waitToMove = false;
 			Snake.move();
+
+			// Call method decreaseInterval to set the Interval to move lower when food
+			// was collected
 			if (Collision.collideFood()) {
 				decreaseInterval();
 			}
-
+			// Set the game state to game over and call the setGameStateMethod to change
+			// graphics to GameOver Menu if snake is collided with itself
 			if (Collision.collideItself()) {
 				Screen.gamestate = GameState.GAMEOVER;
 				Screen.setGameState();
 				stop();
 				Snake.tails.clear();
 			}
+			// When causing a collision with the border in StandardMode set game state to
+			// game over and call setGameState for GameOverMenu
 			if (MainMenu.StandardModeRb.isSelected() && Collision.collideBorder()) {
 				Screen.gamestate = GameState.GAMEOVER;
 				Screen.setGameState();
 				stop();
 				Snake.tails.clear();
 			}
+			// Possibility to come through the wall in FreeMode. Set the head of snake at
+			// the same coordinate on the other side of the field
 			if (MainMenu.FreeModeRb.isSelected()) {
 				if (Collision.crossLeftBorder()) {
 					Snake.head.setHeadX(Board.NumberOfBoxesX - 1);

@@ -10,13 +10,15 @@ import gui.Screen;
 import action.Timer;
 
 /**
+ * All parts of snake are united in this class.
+ * 
  * @authors Tamara Romer and Chiara Frankenbach
  */
 
 public class Snake {
-	
+
 	/**
-	 * 
+	 * Declaration of needed snake parts and qualities.????
 	 */
 	public static boolean waitToMove = false;
 	public static Head head = new Head(Board.NumberOfBoxesX / 2, Board.NumberOfBoxesY / 2);
@@ -25,6 +27,7 @@ public class Snake {
 	public static Timer timer;
 
 	/**
+	 * Set the initial length of five fields.
 	 */
 	public static void SnakeInitialize() {
 		head.setDirection(Direction.LEFT);
@@ -32,21 +35,24 @@ public class Snake {
 		tails.add(new Tail(head.getHeadX() + 1, head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() + 2, head.getHeadY()));
 		tails.add(new Tail(head.getHeadX() + 3, head.getHeadY()));
+		// Snake starts to move
 		timer = new Timer();
 		timer.start();
 
+		// Set the focus to menu new
 		JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Screen.menu);
 		frame.requestFocusInWindow();
-
 	}
 
 	/**
+	 * Set on the last position of snake tails a new tail.
 	 */
 	public static void addTail() {
 		tails.add(new Tail(tails.get(tails.size() - 1).TailX, tails.get(tails.size() - 1).TailY));
 	}
 
 	/**
+	 * 
 	 */
 	public static void move() {
 		if (tails.size() >= 2) {
