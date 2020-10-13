@@ -6,6 +6,9 @@ package game;
 
 public class Tail {
 
+	/**
+	 * 
+	 */
 	int TailX;
 	int TailY;
 	private boolean wait = true;

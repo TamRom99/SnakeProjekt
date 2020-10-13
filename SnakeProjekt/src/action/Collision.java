@@ -8,7 +8,9 @@ import gui.Board;
  */
 
 public class Collision {
-
+	
+	/**
+	 */
 	public static int score;
 
 	// Eat food, grow tail

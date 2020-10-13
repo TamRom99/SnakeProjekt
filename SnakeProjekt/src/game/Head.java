@@ -6,6 +6,9 @@ package game;
 
 public class Head {
 
+	/**
+	 * 
+	 */
 	private int HeadX;
 	private int HeadY;
 	private Direction direction;

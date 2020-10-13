@@ -3,12 +3,13 @@ package action;
 import gui.Screen;
 
 /**
- * @author Tamara Romer The Main-class is responsible for the execution of the
- *         program.
+ * The Main-class is responsible for the execution of the program.
+ * 
+ * @author Tamara Romer
  */
 
 public class Main {
-	
+
 	/**
 	 * @param args local variable who stores the String Array.
 	 */

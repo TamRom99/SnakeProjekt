@@ -15,14 +15,16 @@ import game.Snake;
 
 /**
  * The Game Over class forms the menu that is displayed at the end of a game. It
- * can be used to start a new game or close the window
+ * can be used to start a new game or close the window.
  * 
  * @author Tamara Romer
  */
 
 public class GameOver extends JPanel {
 
-	// Declaration of the menu components
+	/**
+	 * Declaration of the menu components.
+	 */
 	private JPanel GameOverPanel;
 	private JLabel GameOverCaption;
 	private JLabel ScoreLabel;
@@ -30,8 +32,8 @@ public class GameOver extends JPanel {
 	private JButton ExitButton;
 
 	/**
-	 * Constructor of the class Game Over, which creates the JPanel (without any Layout) and calls
-	 * createPanelGameOver-Method.
+	 * Constructor of the class Game Over, which creates the JPanel (without any
+	 * Layout) and calls createPanelGameOver-Method.
 	 */
 	GameOver() {
 		add(createGameOverPanel());
@@ -74,7 +76,7 @@ public class GameOver extends JPanel {
 		RestartButton.setBackground(Color.ORANGE);
 		RestartButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Sets the game state to game and calls the setGameMethode to change graphics
+				// Sets the game state to game and calls the setGameMethode to change graphics
 				Screen.gamestate = GameState.GAME;
 				Screen.setGameState();
 				Screen.gameOver.setVisible(false);

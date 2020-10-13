@@ -23,7 +23,9 @@ import game.Snake;
 
 public class MainMenu extends JPanel {
 
-	// Declaration of components for the startmenu
+	/**
+	 * Declaration of components for the startmenu.
+	 */
 	private JPanel menuPanel;
 	private JLabel picture;
 	private Icon snakeIcon;
@@ -87,11 +89,11 @@ public class MainMenu extends JPanel {
 			}
 		});
 
-		// Create a button group so that only one button can be selected at a time.
+		// Create a button group so that only one button can be selected at a time
 		ButtonGroup bg = new ButtonGroup();
 
 		// Create the radio button for selecting the game mode Standard,
-		// in which the snake dies when it collides with the wall.
+		// in which the snake dies when it collides with the wall
 		StandardModeRb = new JRadioButton("Standard-Mode");
 		StandardModeRb.setForeground(Color.WHITE);
 		StandardModeRb.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -102,7 +104,7 @@ public class MainMenu extends JPanel {
 		bg.add(StandardModeRb);
 
 		// Create the radio button for selecting the game mode Freemode,
-		// in which the snake can run through the walls.
+		// in which the snake can run through the walls
 		FreeModeRb = new JRadioButton("Free-Mode");
 		FreeModeRb.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		FreeModeRb.setForeground(Color.WHITE);

@@ -17,6 +17,7 @@ import gui.GameState;
 public class KeyHandler implements KeyListener {
 
 	/**
+	 * Not in use.
 	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -25,28 +26,33 @@ public class KeyHandler implements KeyListener {
 	}
 
 	/**
+	 * Control and pause of snake are defined here.
 	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
 		switch (e.getKeyCode()) {
+		// Move upwards
 		case KeyEvent.VK_UP:
 			if (!(Snake.head.getDirection() == Direction.DOWN) && !Snake.waitToMove) {
 				Snake.head.setDirection(Direction.UP);
 				Snake.waitToMove = true;
 			}
 			break;
+		// Move to the right
 		case KeyEvent.VK_RIGHT:
 			if (!(Snake.head.getDirection() == Direction.LEFT) && !Snake.waitToMove) {
 				Snake.head.setDirection(Direction.RIGHT);
 				Snake.waitToMove = true;
 			}
 			break;
+		// Move to the left
 		case KeyEvent.VK_LEFT:
 			if (!(Snake.head.getDirection() == Direction.RIGHT) && !Snake.waitToMove) {
 				Snake.head.setDirection(Direction.LEFT);
 				Snake.waitToMove = true;
 			}
 			break;
+		// Move down
 		case KeyEvent.VK_DOWN:
 			if (!(Snake.head.getDirection() == Direction.UP) && !Snake.waitToMove) {
 				Snake.head.setDirection(Direction.DOWN);
@@ -54,6 +60,7 @@ public class KeyHandler implements KeyListener {
 			}
 			break;
 
+		// Stop moving
 		case KeyEvent.VK_SPACE:
 			if (Screen.gamestate == GameState.GAME && !Snake.waitToMove) {
 				Screen.gamestate = GameState.PAUSE;
@@ -64,6 +71,7 @@ public class KeyHandler implements KeyListener {
 	}
 
 	/**
+	 * Not in use.
 	 */
 	@Override
 	public void keyReleased(KeyEvent e) {

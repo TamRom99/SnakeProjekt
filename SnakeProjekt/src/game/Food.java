@@ -9,6 +9,9 @@ import gui.Board;
 
 public class Food {
 
+	/**
+	 * 
+	 */
 	private int FoodX;
 	private int FoodY;
 

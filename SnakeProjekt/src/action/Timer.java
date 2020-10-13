@@ -14,6 +14,10 @@ import gui.Board;
  */
 
 public class Timer implements Runnable {
+	
+	/**
+	 * Declaration of 
+	 */
 	private Thread runner;
 	public static int millisec = 200;
 	private AtomicBoolean running = new AtomicBoolean(false);

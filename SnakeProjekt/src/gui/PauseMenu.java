@@ -22,7 +22,9 @@ import game.Snake;
 
 public class PauseMenu extends JPanel {
 
-	// Declaration of the menu components
+	/**
+	 * Declaration of the menu components.
+	 */
 	private JPanel PausePanel;
 	private JLabel PauseCaption;
 	private JButton ContinueButton;
@@ -66,13 +68,13 @@ public class PauseMenu extends JPanel {
 		ContinueButton.setBackground(Color.BLACK);
 		ContinueButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Sets the game state to game and calls the setGameMethode to change graphics
+				// Sets the game state to game and calls the setGameMethode to change graphics
 				Screen.gamestate = GameState.GAME;
 				Screen.setGameState();
-				//Makes the pause menu disappear and shows the board
+				// Makes the pause menu disappear and shows the board
 				Screen.board.setVisible(true);
 				Screen.pausemenu.setVisible(false);
-				//Starts the timer again and continue the game process 
+				// Starts the timer again and continue the game process
 				Snake.timer.start();
 				// Set the focus new
 				JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Screen.menu);
