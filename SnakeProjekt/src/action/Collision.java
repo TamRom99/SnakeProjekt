@@ -8,7 +8,7 @@ import gui.Board;
  */
 
 public class Collision {
-	
+
 	/**
 	 */
 	public static int score;
@@ -16,13 +16,14 @@ public class Collision {
 	// Eat food, grow tail
 	/**
 	 */
-	public static void collideFood() {
+	public static boolean collideFood() {
 		if (Snake.head.getHeadX() == Snake.food.getFoodX() && Snake.head.getHeadY() == Snake.food.getFoodY()) {
 			Snake.addTail();
 			Snake.food.placeFood();
 			score = score + 10;
-			Timer.millisec = Timer.millisec - 5;
+			return true;
 		}
+		return false;
 	}
 
 	// Collide with Itself
