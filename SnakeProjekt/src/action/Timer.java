@@ -49,16 +49,22 @@ public class Timer {
 	}
 
 	/**
-	 * Declaration of the swing timer, which lets the snake moving forward in
-	 * constant steps. Furthermore stops the snake if it collides with itself and if
-	 * Standard Mode is selected with the border too. If Free Mode is chosen turn to
-	 * the other side of the field.
-	 * 
-	 * @author of collision cases Ilayda Alkan - revised from Tamara Romer and
-	 *         Chiara Frankenbach
+	 * Declaration of swing timer.
 	 */
 	javax.swing.Timer timer = new javax.swing.Timer(millisec, new ActionListener() {
-		public void actionPerformed(ActionEvent arg0) {
+
+		/**
+		 * Auto-generated method, which has to exist due to ActionListener. It lets the
+		 * snake moving forward in constant steps. Furthermore it stops the snake if it
+		 * collides with itself and if Standard Mode is selected with the border too. If
+		 * Free Mode is chosen call the relevant method from class collision and which
+		 * turns the snake to the other side of the field.
+		 * 
+		 * @author of collision cases Ilayda Alkan - revised from Tamara Romer and
+		 *         Chiara Frankenbach
+		 */
+		@Override
+		public void actionPerformed(ActionEvent e) {
 			// When the snake don't wait to move, move
 			Snake.waitToMove = false;
 			Snake.move();

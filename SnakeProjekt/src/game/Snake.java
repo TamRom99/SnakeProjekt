@@ -18,7 +18,7 @@ import action.Timer;
 public class Snake {
 
 	/**
-	 * Declaration of needed snake parts and qualities.????
+	 * Declaration of needed snake parts and qualities.
 	 */
 	public static boolean waitToMove = false;
 	public static Head head = new Head(Board.NumberOfBoxesX / 2, Board.NumberOfBoxesY / 2);
@@ -39,7 +39,7 @@ public class Snake {
 		timer = new Timer();
 		timer.start();
 
-		// Set the focus to menu new
+		// Set the focus to menu
 		JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(Screen.menu);
 		frame.requestFocusInWindow();
 	}
