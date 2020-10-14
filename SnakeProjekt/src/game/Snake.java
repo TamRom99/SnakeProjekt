@@ -12,7 +12,7 @@ import action.Timer;
 /**
  * All parts of snake are united in this class.
  * 
- * @authors Tamara Romer and Chiara Frankenbach
+ * @authors Tamara Romer oder Ilayda Alkan?? and Chiara Frankenbach
  */
 
 public class Snake {
@@ -52,9 +52,10 @@ public class Snake {
 	}
 
 	/**
-	 * 
+	 * How the snake moves actually forward.
 	 */
 	public static void move() {
+		// First move tails
 		if (tails.size() >= 2) {
 			for (int i = tails.size() - 1; i >= 1; i--) {
 				if (tails.get(i).isWait()) {
@@ -66,7 +67,7 @@ public class Snake {
 			}
 		}
 
-		// Move first Tail to Head
+		// Then move first tail to head
 		if (tails.size() >= 1) {
 			if (tails.get(0).isWait()) {
 				tails.get(0).setTailX(head.getHeadX());
@@ -74,7 +75,8 @@ public class Snake {
 			}
 		}
 
-		// Move Head
+		// Finally move head, but take the direction to move and the selected mode in
+		// consideration
 		if (MainMenu.FreeModeRb.isSelected()) {
 			switch (head.getDirection()) {
 			case RIGHT:
@@ -126,6 +128,7 @@ public class Snake {
 	}
 
 	/**
+	 * Conversion of coordinates of the playing field.
 	 */
 	public static Point coordinates(int x, int y) {
 		Point p = new Point(0, 0);
