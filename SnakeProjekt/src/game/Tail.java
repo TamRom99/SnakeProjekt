@@ -1,7 +1,7 @@
 package game;
 
 /**
- * @author
+ * @author Ilayda Alkan
  */
 
 public class Tail {

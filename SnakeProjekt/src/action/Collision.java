@@ -4,17 +4,22 @@ import game.Snake;
 import gui.Board;
 
 /**
+ * The class collision is responsible for what the snake does when it collides
+ * with different barriers.
+ * 
  * @author Ilayda Alkan
  */
 
 public class Collision {
 
 	/**
+	 * Declaration of the counter score.
 	 */
 	public static int score;
 
-	// Eat food, grow tail
 	/**
+	 * Eat food and grow tail if the head coordinates are equal to the food
+	 * coordinates.
 	 */
 	public static boolean collideFood() {
 		if (Snake.head.getHeadX() == Snake.food.getFoodX() && Snake.head.getHeadY() == Snake.food.getFoodY()) {
@@ -26,8 +31,9 @@ public class Collision {
 		return false;
 	}
 
-	// Collide with Itself
 	/**
+	 * This Method checks when the head coordinates are equal to one of the tail
+	 * coordinates. In this case return true.
 	 */
 	public static boolean collideItself() {
 		for (int i = 0; i < Snake.tails.size(); i++) {
@@ -39,8 +45,9 @@ public class Collision {
 		return false;
 	}
 
-	// Standard mode
 	/**
+	 * This method checks if the head coordinates collides with the border. This
+	 * case can only be true if StandardMode is selected.
 	 */
 	public static boolean collideBorder() {
 		return (Snake.head.getHeadX() < 0 || Snake.head.getHeadX() > Board.NumberOfBoxesX - 1
@@ -49,6 +56,8 @@ public class Collision {
 
 	// Free mode
 	/**
+	 * This method is responsible that the head coordinates is able to cross the
+	 * border at the left side. This case can only be true if FreeMode is selected.
 	 */
 	public static boolean crossLeftBorder() {
 		return (Snake.head.getHeadX() < 0);

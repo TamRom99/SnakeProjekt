@@ -12,7 +12,7 @@ import action.Timer;
 /**
  * All parts of snake are united in this class.
  * 
- * @authors Tamara Romer oder Ilayda Alkan?? and Chiara Frankenbach
+ * @authors Tamara Romer, Ilayda Alkan and Chiara Frankenbach
  */
 
 public class Snake {
@@ -28,6 +28,8 @@ public class Snake {
 
 	/**
 	 * Set the initial length of five fields.
+	 * 
+	 * @author Chiara Frankenbach
 	 */
 	public static void SnakeInitialize() {
 		head.setDirection(Direction.LEFT);
@@ -46,6 +48,8 @@ public class Snake {
 
 	/**
 	 * Set on the last position of snake tails a new tail.
+	 * 
+	 * @author Tamara Romer
 	 */
 	public static void addTail() {
 		tails.add(new Tail(tails.get(tails.size() - 1).TailX, tails.get(tails.size() - 1).TailY));
@@ -53,6 +57,8 @@ public class Snake {
 
 	/**
 	 * How the snake moves actually forward.
+	 * 
+	 * @author Ilayda Alkan
 	 */
 	public static void move() {
 		// First move tails
@@ -129,6 +135,8 @@ public class Snake {
 
 	/**
 	 * Conversion of coordinates of the playing field.
+	 * 
+	 * @author Tamara Romer
 	 */
 	public static Point coordinates(int x, int y) {
 		Point p = new Point(0, 0);

@@ -37,7 +37,7 @@ public class MainMenu extends JPanel {
 	 * Constructor of the Main Menu class, which creates the panel for the menu at
 	 * the beginning of a game.
 	 */
-	MainMenu() {
+	public MainMenu() {
 		add(createPicture());
 		add(createMainMenuPanel());
 		setSize(Screen.width, Screen.height - Screen.captionHeight);
