@@ -42,7 +42,7 @@ public class Timer {
 	private void decreaseInterval() {
 		if (millisec >= 10) {
 			timer.stop();
-			millisec = millisec - 5;
+			millisec = millisec - 2;
 			timer.setDelay(millisec);
 			timer.start();
 		}
