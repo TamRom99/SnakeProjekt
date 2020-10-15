@@ -14,7 +14,7 @@ import action.Timer;
 import game.Snake;
 
 /**
- * The Game Over class forms the menu that is displayed at the end of a game. It
+ * The Game Over class creates the menu that is displayed at the end of a game. It
  * can be used to start a new game or close the window.
  * 
  * @author Tamara Romer

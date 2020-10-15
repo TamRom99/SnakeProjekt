@@ -9,7 +9,7 @@ import gui.MainMenu;
 import gui.Board;
 
 /**
- * The Timer lets the snake moving and stopping.
+ * The Timer allows the snake moving and stopping.
  * 
  * @author Chiara Frankenbach
  */
@@ -37,7 +37,7 @@ public class Timer {
 	}
 
 	/**
-	 * Lets the snake moving faster per 5 milliseconds.
+	 * Makes the snake moving faster per 2 milliseconds.
 	 */
 	private void decreaseInterval() {
 		if (millisec >= 10) {
@@ -54,9 +54,9 @@ public class Timer {
 	javax.swing.Timer timer = new javax.swing.Timer(millisec, new ActionListener() {
 
 		/**
-		 * Auto-generated method, which has to exist due to ActionListener. It lets the
-		 * snake moving forward in constant steps. Furthermore it stops the snake if it
-		 * collides with itself and if Standard Mode is selected with the border too. If
+		 * Auto-generated method, which has to exist due to ActionListener. It allows the
+		 * snake to move forward in constant steps. Furthermore it stops the snake if it
+		 * collides with itself and if Standard Mode is selected with the border as well. If
 		 * Free Mode is chosen call the relevant method from class collision and which
 		 * turns the snake to the other side of the field.
 		 * 

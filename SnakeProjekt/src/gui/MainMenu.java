@@ -15,9 +15,8 @@ import javax.swing.JLabel;
 import game.Snake;
 
 /**
- * In the class, the main menu is created which can be used to start the game
- * and select the game modes.
- * 
+ * In the class, the main menu is created in which
+ *  you can select the game modes and start the game.
  * @author Tamara Romer
  */
 

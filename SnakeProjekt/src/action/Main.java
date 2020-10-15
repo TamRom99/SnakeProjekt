@@ -11,7 +11,7 @@ import gui.Screen;
 public class Main {
 
 	/**
-	 * @param args local variable who stores the String Array.
+	 * @param args local variable which stores the String Array.
 	 */
 	public static void main(String[] args) {
 

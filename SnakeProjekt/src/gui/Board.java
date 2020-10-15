@@ -11,7 +11,7 @@ import game.Snake;
 import action.Collision;
 
 /**
- * The class board is responsible for drawing the playing field and the game
+ * The class board is responsible for drawing the gameboard and the game
  * components.
  * 
  * @author Tamara Romer

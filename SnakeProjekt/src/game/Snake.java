@@ -47,7 +47,7 @@ public class Snake {
 	}
 
 	/**
-	 * Set on the last position of snake tails a new tail.
+	 * Add a new tail on the last position of snake.
 	 * 
 	 * @author Tamara Romer
 	 */

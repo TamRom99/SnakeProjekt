@@ -12,7 +12,6 @@ import game.Snake;
 /**
  * The Screen class creates the window and performs the graphical content
  * changes.
- * 
  * @author Tamara Romer
  */
 

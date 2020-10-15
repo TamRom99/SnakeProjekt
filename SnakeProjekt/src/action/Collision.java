@@ -4,9 +4,8 @@ import game.Snake;
 import gui.Board;
 
 /**
- * The class collision is responsible for what the snake does when it collides
- * with different barriers.
- * 
+ * The class collision is responsible for the different snake actions 
+ * when it collides with different barriers.
  * @author Ilayda Alkan
  */
 
@@ -32,7 +31,7 @@ public class Collision {
 	}
 
 	/**
-	 * This Method checks when the head coordinates are equal to one of the tail
+	 * This Method checks if the head coordinates are equal to one of the tail
 	 * coordinates. In this case return true.
 	 */
 	public static boolean collideItself() {
@@ -46,7 +45,7 @@ public class Collision {
 	}
 
 	/**
-	 * This method checks if the head coordinates collides with the border. This
+	 * This method checks if the head coordinates collide with the border. This
 	 * case can only be true if StandardMode is selected.
 	 */
 	public static boolean collideBorder() {
@@ -56,7 +55,7 @@ public class Collision {
 
 	// Free mode
 	/**
-	 * This method is responsible that the head coordinates is able to cross the
+	 * This method makes able that the head can cross the
 	 * border at the left side. This case can only be true if FreeMode is selected.
 	 */
 	public static boolean crossLeftBorder() {
@@ -64,18 +63,24 @@ public class Collision {
 	}
 
 	/**
+	 * This method makes able that the head can cross the
+	 * border at the right side. This case can only be true if FreeMode is selected.
 	 */
 	public static boolean crossRightBorder() {
 		return (Snake.head.getHeadX() > Board.NumberOfBoxesX - 1);
 	}
 
 	/**
+	 * This method makes able that the head can cross the
+	 * border at the upper side. This case can only be true if FreeMode is selected.
 	 */
 	public static boolean crossUpperBorder() {
 		return (Snake.head.getHeadY() < 0);
 	}
 
 	/**
+	 * This method makes able that the head can cross the
+	 * border at the down side. This case can only be true if FreeMode is selected.
 	 */
 	public static boolean crossDownBorder() {
 		return (Snake.head.getHeadY() > Board.NumberOfBoxesY - 1);
